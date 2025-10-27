@@ -1,10 +1,34 @@
 /*
-  # Insert sample data
+  # Sample Data
 
-  1. Sample tour packages
-  2. Sample blog posts
-  
-  This provides initial data for development and testing.
+  ## Overview
+  This migration inserts sample data for the Karibu Tours & Safariz application
+  to support development, testing, and demonstration purposes.
+
+  ## Data Inserted
+
+  ### 1. Tour Packages (5 records)
+  - Kilimanjaro Machame Route (Mountain Climbing)
+  - Serengeti Safari Adventure (Safari)
+  - Ngorongoro Crater Day Trip (Day Trips)
+  - Mount Meru Climbing (Mountain Climbing)
+  - Tarangire National Park Safari (Safari)
+
+  ### 2. Blog Posts (3 records)
+  - Ultimate Guide to Climbing Mount Kilimanjaro
+  - Best Time to Visit Serengeti National Park
+  - Packing List for Tanzania Safari
+
+  ### 3. Destinations (4 records)
+  - Mount Kilimanjaro
+  - Serengeti National Park
+  - Ngorongoro Crater
+  - Stone Town, Zanzibar
+
+  ## Notes
+  - All sample data uses realistic content and pricing
+  - Images are sourced from Pexels stock photography
+  - Data is for demonstration purposes only
 */
 
 -- Insert sample tour packages
@@ -26,7 +50,7 @@ INSERT INTO tour_packages (
   best_time,
   featured,
   itinerary
-) VALUES 
+) VALUES
 (
   'Kilimanjaro Machame Route',
   'The Machame route is one of the most popular routes to the summit of Mount Kilimanjaro. Known as the "Whiskey Route," it offers stunning scenery and a high success rate. This challenging trek takes you through diverse ecosystems, from lush rainforest to alpine desert, culminating at Uhuru Peak.',
@@ -186,7 +210,7 @@ INSERT INTO blog_posts (
   tags,
   published,
   published_at
-) VALUES 
+) VALUES
 (
   'Ultimate Guide to Climbing Mount Kilimanjaro',
   'ultimate-guide-climbing-kilimanjaro',
@@ -222,4 +246,101 @@ INSERT INTO blog_posts (
   ARRAY['packing', 'safari', 'gear', 'preparation'],
   true,
   now() - interval '2 weeks'
+);
+
+-- Insert sample destinations
+INSERT INTO destinations (
+  name,
+  slug,
+  description,
+  short_description,
+  featured_image,
+  images,
+  category,
+  location,
+  best_time_to_visit,
+  activities,
+  highlights,
+  difficulty_level,
+  duration_recommended,
+  entry_requirements,
+  accommodation_options,
+  transportation,
+  featured
+) VALUES
+(
+  'Mount Kilimanjaro',
+  'mount-kilimanjaro',
+  'Mount Kilimanjaro, standing at 5,895 meters (19,341 feet), is not only Africa''s highest peak but also the world''s tallest free-standing mountain. This majestic stratovolcano consists of three volcanic cones: Kibo, Mawenzi, and Shira.',
+  'Africa''s highest peak and the world''s tallest free-standing mountain',
+  'https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg?auto=compress&cs=tinysrgb&w=800',
+  ARRAY['https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg?auto=compress&cs=tinysrgb&w=800', 'https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800'],
+  'mountain',
+  '{"latitude": -3.0674, "longitude": 37.3556, "region": "Kilimanjaro", "district": "Moshi"}',
+  'January-March and June-October offer the best weather conditions',
+  ARRAY['Mountain Climbing', 'Photography', 'Wildlife Viewing'],
+  ARRAY['Uhuru Peak (5,895m)', 'Glaciers', 'Multiple Climate Zones', 'Sunrise Views'],
+  'challenging',
+  '5-9 days',
+  ARRAY['Valid passport', 'Tanzania visa', 'Yellow fever vaccination', 'Travel insurance'],
+  ARRAY['Mountain Huts', 'Camping', 'Luxury Hotels in Moshi'],
+  ARRAY['Kilimanjaro International Airport', 'Road transfer from Arusha'],
+  true
+),
+(
+  'Serengeti National Park',
+  'serengeti-national-park',
+  'The Serengeti National Park is a large national park in northern Tanzania that stretches over 14,750 square kilometers. It is famous for its annual migration of over 1.5 million white-bearded wildebeest and 250,000 zebra.',
+  'Home to the Great Migration and endless plains teeming with wildlife',
+  'https://images.pexels.com/photos/631292/pexels-photo-631292.jpeg?auto=compress&cs=tinysrgb&w=800',
+  ARRAY['https://images.pexels.com/photos/631292/pexels-photo-631292.jpeg?auto=compress&cs=tinysrgb&w=800'],
+  'park',
+  '{"latitude": -2.3333, "longitude": 34.8333, "region": "Mara", "district": "Serengeti"}',
+  'June to October for the Great Migration, December to March for calving season',
+  ARRAY['Game Drives', 'Photography', 'Balloon Safaris'],
+  ARRAY['Great Migration', 'Big Five', 'Endless Plains', 'Hot Air Balloons'],
+  'easy',
+  '3-7 days',
+  ARRAY['Valid passport', 'Tanzania visa', 'Park fees'],
+  ARRAY['Safari Lodges', 'Tented Camps', 'Mobile Camps'],
+  ARRAY['Seronera Airstrip', 'Road from Arusha'],
+  true
+),
+(
+  'Ngorongoro Crater',
+  'ngorongoro-crater',
+  'The Ngorongoro Conservation Area is a protected area and a World Heritage Site located in the Crater Highlands area of Tanzania. The main feature is the Ngorongoro Crater, the world''s largest inactive, intact, and unfilled volcanic caldera.',
+  'The world''s largest inactive volcanic caldera, a natural wildlife sanctuary',
+  'https://images.pexels.com/photos/1230302/pexels-photo-1230302.jpeg?auto=compress&cs=tinysrgb&w=800',
+  ARRAY['https://images.pexels.com/photos/1230302/pexels-photo-1230302.jpeg?auto=compress&cs=tinysrgb&w=800'],
+  'park',
+  '{"latitude": -3.2, "longitude": 35.5, "region": "Arusha", "district": "Ngorongoro"}',
+  'Year-round destination with dry season (June-October) being optimal',
+  ARRAY['Game Drives', 'Cultural Tours', 'Photography'],
+  ARRAY['Crater Floor', 'Black Rhinos', 'Flamingo Lakes', 'Maasai Culture'],
+  'easy',
+  '1-2 days',
+  ARRAY['Valid passport', 'Tanzania visa', 'Conservation fees'],
+  ARRAY['Crater Lodge', 'Safari Camps', 'Budget Lodges'],
+  ARRAY['Road from Arusha', 'Charter flights'],
+  true
+),
+(
+  'Stone Town, Zanzibar',
+  'stone-town-zanzibar',
+  'Stone Town is the old part of Zanzibar City, the main city of Zanzibar, in Tanzania. The town was the center of trade on the East African coast between Asia and Africa before the colonization of the mainland.',
+  'UNESCO World Heritage site with rich Swahili culture and architecture',
+  'https://images.pexels.com/photos/1670732/pexels-photo-1670732.jpeg?auto=compress&cs=tinysrgb&w=800',
+  ARRAY['https://images.pexels.com/photos/1670732/pexels-photo-1670732.jpeg?auto=compress&cs=tinysrgb&w=800'],
+  'cultural',
+  '{"latitude": -6.1659, "longitude": 39.1917, "region": "Zanzibar", "district": "Stone Town"}',
+  'June to October and December to February for best weather',
+  ARRAY['Walking Tours', 'Spice Tours', 'Cultural Experiences'],
+  ARRAY['Historic Architecture', 'Spice Markets', 'Sunset Dhow Cruises', 'Cultural Museums'],
+  'easy',
+  '2-3 days',
+  ARRAY['Valid passport', 'Tanzania visa or permit'],
+  ARRAY['Historic Hotels', 'Boutique Guesthouses', 'Budget Hostels'],
+  ARRAY['Zanzibar Airport', 'Ferry from Dar es Salaam'],
+  true
 );

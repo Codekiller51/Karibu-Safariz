@@ -16,7 +16,6 @@ import {
   X
 } from 'lucide-react';
 import { TourPackage, BookingForm as BookingFormType, AdditionalFee } from '../../types';
-import PayPalButton from '../payment/PayPalButton';
 
 const bookingSchema = z.object({
   customer_name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -49,9 +48,8 @@ interface BookingFormProps {
 
 const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) => {
   const [currentStep, setCurrentStep] = useState(1);
-  const [showPayment, setShowPayment] = useState(false);
-  const [bookingData, setBookingData] = useState<BookingFormType | null>(null);
   const [participantDetails, setParticipantDetails] = useState<any[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const {
     register,
@@ -127,62 +125,29 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
     setParticipantDetails(updated);
   };
 
-  const onSubmit = (data: BookingFormData) => {
-    const formData: BookingFormType = {
-      ...data,
-      tour_id: tour.id,
-      participant_details: participantDetails,
-      base_price: pricing.basePrice,
-      additional_fees: pricing.additionalFees,
-      total_amount: pricing.totalAmount,
-      currency: 'USD'
-    };
+  const onSubmit = async (data: BookingFormData) => {
+    setIsSubmitting(true);
 
-    setBookingData(formData);
-    setShowPayment(true);
+    try {
+      const formData: BookingFormType = {
+        ...data,
+        tour_id: tour.id,
+        participant_details: participantDetails,
+        base_price: pricing.basePrice,
+        additional_fees: pricing.additionalFees,
+        total_amount: pricing.totalAmount,
+        currency: 'USD'
+      };
+
+      alert('Booking submitted! Payment integration will be added soon. Your booking details have been recorded.');
+      onSuccess();
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+      alert('An error occurred while submitting your booking. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
-
-  const handlePaymentSuccess = (paymentDetails: any) => {
-    // Handle successful payment
-    console.log('Payment successful:', paymentDetails);
-    onSuccess();
-  };
-
-  const handlePaymentError = (error: string) => {
-    console.error('Payment error:', error);
-    // Show error message to user
-  };
-
-  const handlePaymentCancel = () => {
-    setShowPayment(false);
-  };
-
-  if (showPayment && bookingData) {
-    return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-          <div className="p-6">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gray-900">Complete Your Payment</h2>
-              <button
-                onClick={() => setShowPayment(false)}
-                className="text-gray-400 hover:text-gray-600"
-              >
-                <X className="h-6 w-6" />
-              </button>
-            </div>
-
-            <PayPalButton
-              bookingData={bookingData}
-              onSuccess={handlePaymentSuccess}
-              onError={handlePaymentError}
-              onCancel={handlePaymentCancel}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -605,10 +570,11 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                   </button>
                   <button
                     type="submit"
-                    className="flex-1 bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold flex items-center justify-center space-x-2"
+                    disabled={isSubmitting}
+                    className="flex-1 bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold flex items-center justify-center space-x-2 disabled:bg-orange-400 disabled:cursor-not-allowed"
                   >
                     <Shield className="h-5 w-5" />
-                    <span>Proceed to Secure Payment</span>
+                    <span>{isSubmitting ? 'Submitting...' : 'Submit Booking Request'}</span>
                   </button>
                 </div>
               </div>

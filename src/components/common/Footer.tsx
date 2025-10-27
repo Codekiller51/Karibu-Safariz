@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
                 alt="KG Logo" 
                 className="h-12 w-auto"
               />
-              <span className="text-xl font-bold">Karibu Safariz</span>
+              <span className="text-xl font-bold">Karibu Tours & Safariz</span>
             </div>
             <p className="text-gray-400">
               Your premier gateway to Tanzania's most spectacular adventures. 
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-orange-600" />
-                <span className="text-gray-400">info@kilimanjarogates.com</span>
+                <span className="text-gray-400">info@kaributz.com</span>
               </div>
             </div>
           </div>
@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Karibu Safariz. All rights reserved.
+            © 2024 Karibu Tours & Safariz. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy" className="text-gray-400 hover:text-orange-600 text-sm transition-colors">

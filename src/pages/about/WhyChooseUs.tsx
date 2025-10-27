@@ -223,7 +223,7 @@ const WhyChooseUs: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Guests Say</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real experiences from travelers who chose Kilimanjaro Gates
+              Real experiences from travelers who chose Karibu Tours & Safariz
             </p>
           </div>
 
@@ -301,7 +301,7 @@ const WhyChooseUs: React.FC = () => {
         <div className="bg-gradient-to-r from-orange-600 to-orange-800 rounded-2xl text-white p-8 md:p-12 text-center">
           <Mountain className="h-16 w-16 mx-auto mb-6 text-white" />
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Experience the Kilimanjaro Gates Difference
+            Experience the Karibu Tours & Safariz Difference
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Join thousands of satisfied travelers who chose excellence, safety, and authenticity for their Tanzania adventure.

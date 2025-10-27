@@ -175,7 +175,7 @@ const Header: React.FC = () => {
               </div>
               <div className="hidden md:flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span>info@kilimanjarogates.com</span>
+                <span>info@kaributz.com</span>
               </div>
               <div className="hidden lg:flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
@@ -217,7 +217,7 @@ const Header: React.FC = () => {
                 className="h-12 w-auto"
               />
               <span className="text-xl font-bold text-gray-900">
-                Karibu Safariz
+                Karibu Tours & Safariz
               </span>
             </Link>
 

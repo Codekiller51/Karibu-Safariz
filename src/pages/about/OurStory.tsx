@@ -46,7 +46,7 @@ const OurStory: React.FC = () => {
     {
       name: 'Joseph Mwangi',
       role: 'Founder & CEO',
-      story: 'Born at the foot of Mount Kilimanjaro, Joseph\'s passion for the mountain began in childhood. After summiting Kilimanjaro over 200 times, he founded Kilimanjaro Gates to share his love for Tanzania\'s natural wonders.',
+      story: 'Born at the foot of Mount Kilimanjaro, Joseph\'s passion for the mountain began in childhood. After summiting Kilimanjaro over 200 times, he founded Karibu Tours & Safariz to share his love for Tanzania\'s natural wonders.',
       image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300'
     },
     {
@@ -147,7 +147,7 @@ const OurStory: React.FC = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Key milestones that shaped Kilimanjaro Gates into the company we are today
+              Key milestones that shaped Karibu Tours & Safariz into the company we are today
             </p>
           </div>
 
@@ -232,7 +232,7 @@ const OurStory: React.FC = () => {
             Be Part of Our Story
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join thousands of adventurers who have become part of the Kilimanjaro Gates family. Your story starts here.
+            Join thousands of adventurers who have become part of the Karibu Tours & Safariz family. Your story starts here.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

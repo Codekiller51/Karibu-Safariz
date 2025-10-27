@@ -9,7 +9,7 @@ const OurTeam: React.FC = () => {
       role: 'Founder & CEO',
       experience: '15+ years',
       specialization: 'Kilimanjaro Expeditions',
-      bio: 'Born and raised in Moshi, Joseph has summited Kilimanjaro over 200 times. His deep knowledge of the mountain and passion for adventure tourism led to the founding of Kilimanjaro Gates.',
+      bio: 'Born and raised in Moshi, Joseph has summited Kilimanjaro over 200 times. His deep knowledge of the mountain and passion for adventure tourism led to the founding of Karibu Tours & Safariz.',
       image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
       achievements: ['200+ Kilimanjaro Summits', 'Tanzania Tourism Award Winner', 'Certified Mountain Guide'],
       languages: ['English', 'Swahili', 'German']

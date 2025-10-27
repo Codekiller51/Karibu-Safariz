@@ -404,7 +404,7 @@ What makes Kilimanjaro particularly special is that it requires no technical cli
                 </p>
                 <div className="text-sm text-gray-600">
                   <div>📞 +255 123 456 789</div>
-                  <div>✉️ info@kilimanjarogates.com</div>
+                  <div>✉️ info@kaributz.com</div>
                 </div>
               </div>
             </div>
