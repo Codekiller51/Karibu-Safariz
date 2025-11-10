@@ -2,23 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { Save, X, Plus, Trash2, Eye, Calendar } from 'lucide-react';
 import { admin } from '../../lib/supabase';
 import { BlogPost } from '../../types';
-
-const blogSchema = z.object({
-  title: z.string().min(5, 'Title must be at least 5 characters'),
-  excerpt: z.string().min(20, 'Excerpt must be at least 20 characters'),
-  content: z.string().min(100, 'Content must be at least 100 characters'),
-  featured_image: z.string().url('Please enter a valid image URL'),
-  author: z.string().min(2, 'Author name is required'),
-  category: z.string().min(1, 'Category is required'),
-  tags: z.array(z.string().min(1)),
-  published: z.boolean(),
-});
-
-type BlogFormData = z.infer<typeof blogSchema>;
+import { blogSchema, type BlogFormData } from '../../lib/validationSchemas';
 
 const BlogForm: React.FC = () => {
   const navigate = useNavigate();

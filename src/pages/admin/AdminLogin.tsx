@@ -2,22 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { Eye, EyeOff, Mail, Lock, Shield } from 'lucide-react';
-import { supabase, admin } from '../../lib/supabase';
-
-const loginSchema = z.object({
-  email: z.string().email('Please enter a valid email address'),
-  password: z.string().min(6, 'Password must be at least 6 characters'),
-});
-
-type LoginFormData = z.infer<typeof loginSchema>;
+import { loginSchema, type LoginFormData } from '../../lib/validationSchemas';
+import { useLogin } from '../../hooks/useLogin';
+import { admin } from '../../lib/supabase';
 
 const AdminLogin: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+  const { handleLogin, isLoading, error } = useLogin({ redirectPath: '/admin/dashboard', isAdmin: true });
 
   const {
     register,
@@ -29,46 +22,17 @@ const AdminLogin: React.FC = () => {
 
   useEffect(() => {
     const checkAdminStatus = async () => {
-      const isAdmin = await admin.checkAdminStatus();
+      const isAdmin = await admin?.checkAdminStatus();
       if (isAdmin) {
         navigate('/admin/dashboard');
       }
     };
-    
+
     checkAdminStatus();
   }, [navigate]);
 
   const onSubmit = async (data: LoginFormData) => {
-    setIsLoading(true);
-    setError(null);
-
-    try {
-      const { error: signInError } = await supabase.auth.signInWithPassword({
-        email: data.email,
-        password: data.password,
-      });
-      
-      if (signInError) {
-        setError(signInError.message);
-        setIsLoading(false);
-        return;
-      }
-      
-      // Check if user is admin
-      const isAdmin = await admin.checkAdminStatus();
-      
-      if (!isAdmin) {
-        await supabase.auth.signOut();
-        setError('You do not have administrator privileges');
-        setIsLoading(false);
-        return;
-      }
-      
-      navigate('/admin/dashboard');
-    } catch (err) {
-      setError('An unexpected error occurred. Please try again.');
-      setIsLoading(false);
-    }
+    await handleLogin(data);
   };
 
   return (

@@ -2,32 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { Save, X, Plus, Trash2, Upload, Image as ImageIcon } from 'lucide-react';
 import { admin } from '../../lib/supabase';
 import { TourPackage, DayItinerary } from '../../types';
-
-const tourSchema = z.object({
-  title: z.string().min(5, 'Title must be at least 5 characters'),
-  description: z.string().min(50, 'Description must be at least 50 characters'),
-  short_description: z.string().min(20, 'Short description must be at least 20 characters'),
-  category: z.enum(['mountain-climbing', 'safari', 'day-trips']),
-  duration: z.number().min(1, 'Duration must be at least 1 day'),
-  difficulty: z.enum(['easy', 'moderate', 'challenging', 'extreme']),
-  price_usd: z.number().min(1, 'Price must be greater than 0'),
-  price_tzs: z.number().min(1, 'Price must be greater than 0'),
-  max_participants: z.number().min(1, 'Max participants must be at least 1'),
-  min_participants: z.number().min(1, 'Min participants must be at least 1'),
-  images: z.array(z.string().url()).min(1, 'At least one image is required'),
-  includes: z.array(z.string().min(1)),
-  excludes: z.array(z.string().min(1)),
-  requirements: z.array(z.string().min(1)),
-  best_time: z.string().min(5, 'Best time must be specified'),
-  featured: z.boolean(),
-  active: z.boolean(),
-});
-
-type TourFormData = z.infer<typeof tourSchema>;
+import { tourSchema, type TourFormData } from '../../lib/validationSchemas';
 
 const TourForm: React.FC = () => {
   const navigate = useNavigate();

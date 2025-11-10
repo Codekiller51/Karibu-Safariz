@@ -2,29 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { Save, X, Plus, Trash2, Eye } from 'lucide-react';
 import { admin } from '../../lib/supabase';
-import { TravelInfo, QuickFact } from '../../types';
-
-const travelInfoSchema = z.object({
-  title: z.string().min(5, 'Title must be at least 5 characters'),
-  excerpt: z.string().min(20, 'Excerpt must be at least 20 characters'),
-  content: z.string().min(100, 'Content must be at least 100 characters'),
-  featured_image: z.string().url('Please enter a valid image URL'),
-  category: z.enum(['tips', 'packing', 'visa', 'best-time', 'health-safety', 'currency', 'weather']),
-  tags: z.array(z.string().min(1)),
-  quick_facts: z.array(z.object({
-    label: z.string().min(1),
-    value: z.string().min(1),
-    icon: z.string().optional(),
-  })),
-  checklist_items: z.array(z.string().min(1)).optional(),
-  featured: z.boolean(),
-  active: z.boolean(),
-});
-
-type TravelInfoFormData = z.infer<typeof travelInfoSchema>;
+import { TravelInfo } from '../../types';
+import { travelInfoSchema, type TravelInfoFormData } from '../../lib/validationSchemas';
 
 const TravelInfoForm: React.FC = () => {
   const navigate = useNavigate();
