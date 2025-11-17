@@ -94,11 +94,11 @@ const TravelInfoManagement: React.FC = () => {
   const getCategoryColor = (category: string) => {
     const colors = {
       'tips': 'bg-green-100 text-green-800',
-      'packing': 'bg-purple-100 text-purple-800',
+      'packing': 'bg-teal-100 text-teal-800',
       'visa': 'bg-red-100 text-red-800',
       'best-time': 'bg-yellow-100 text-yellow-800',
       'health-safety': 'bg-pink-100 text-pink-800',
-      'currency': 'bg-indigo-100 text-indigo-800',
+      'currency': 'bg-sky-100 text-sky-800',
       'weather': 'bg-cyan-100 text-cyan-800'
     };
     return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-800';

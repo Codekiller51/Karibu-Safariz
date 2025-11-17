@@ -13,6 +13,9 @@ import BookingsManagement from './BookingsManagement';
 import UsersManagement from './UsersManagement';
 import ReviewsManagement from './ReviewsManagement';
 import InquiriesManagement from './InquiriesManagement';
+import DestinationManagement from './DestinationManagement';
+import DestinationForm from './DestinationForm';
+import SettingsManagement from './SettingsManagement';
 
 const AdminRoutes: React.FC = () => {
   return (
@@ -33,9 +36,11 @@ const AdminRoutes: React.FC = () => {
         <Route path="bookings" element={<BookingsManagement />} />
         <Route path="users" element={<UsersManagement />} />
         <Route path="reviews" element={<ReviewsManagement />} />
-        <Route path="destinations" element={<div>Destinations Management</div>} />
+        <Route path="destinations" element={<DestinationManagement />} />
+        <Route path="destinations/new" element={<DestinationForm />} />
+        <Route path="destinations/edit/:id" element={<DestinationForm />} />
         <Route path="inquiries" element={<InquiriesManagement />} />
-        <Route path="settings" element={<div>Settings</div>} />
+        <Route path="settings" element={<SettingsManagement />} />
         <Route path="*" element={<Navigate to="/admin/dashboard" replace />} />
       </Route>
     </Routes>

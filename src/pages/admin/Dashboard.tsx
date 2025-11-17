@@ -113,10 +113,10 @@ const Dashboard: React.FC = () => {
   const statCards = [
     { name: 'Total Tours', value: stats.totalTours, icon: Package, href: '/admin/tours', color: 'bg-blue-500' },
     { name: 'Total Users', value: stats.totalUsers, icon: Users, href: '/admin/users', color: 'bg-green-500' },
-    { name: 'Total Bookings', value: stats.totalBookings, icon: CreditCard, href: '/admin/bookings', color: 'bg-purple-500' },
+    { name: 'Total Bookings', value: stats.totalBookings, icon: CreditCard, href: '/admin/bookings', color: 'bg-teal-500' },
     { name: 'Total Reviews', value: stats.totalReviews, icon: Star, href: '/admin/reviews', color: 'bg-yellow-500' },
     { name: 'Total Revenue', value: `$${stats.totalRevenue.toLocaleString()}`, icon: DollarSign, href: '/admin/bookings', color: 'bg-green-600' },
-    { name: 'Total Inquiries', value: stats.totalInquiries, icon: MessageSquare, href: '/admin/inquiries', color: 'bg-indigo-500' },
+    { name: 'Total Inquiries', value: stats.totalInquiries, icon: MessageSquare, href: '/admin/inquiries', color: 'bg-sky-500' },
   ];
 
   const alertCards = [
@@ -235,7 +235,7 @@ const Dashboard: React.FC = () => {
           </Link>
           <Link
             to="/admin/travel-info/new"
-            className="bg-purple-600 hover:bg-purple-700 text-white rounded-lg p-4 text-center"
+            className="bg-teal-600 hover:bg-teal-700 text-white rounded-lg p-4 text-center"
           >
             Add Travel Info
           </Link>
@@ -247,58 +247,74 @@ const Dashboard: React.FC = () => {
         <h2 className="text-lg font-medium text-gray-900 mb-4">Recent Activity</h2>
         <div className="bg-white shadow overflow-hidden sm:rounded-md">
           <ul className="divide-y divide-gray-200">
-            <li>
-              <div className="px-4 py-4 sm:px-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="bg-blue-100 rounded-md p-2 mr-4">
-                      <CreditCard className="h-5 w-5 text-blue-600" />
+            {pendingBookings > 0 && (
+              <li>
+                <div className="px-4 py-4 sm:px-6">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="bg-blue-100 rounded-md p-2 mr-4">
+                        <CreditCard className="h-5 w-5 text-blue-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-gray-900">{pendingBookings} pending booking{pendingBookings !== 1 ? 's' : ''}</p>
+                        <p className="text-xs text-gray-500">Awaiting confirmation</p>
+                      </div>
                     </div>
-                    <p className="text-sm font-medium text-gray-900">New booking received</p>
                   </div>
-                  <div className="text-sm text-gray-500">5 minutes ago</div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <div className="px-4 py-4 sm:px-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="bg-yellow-100 rounded-md p-2 mr-4">
-                      <Star className="h-5 w-5 text-yellow-600" />
+              </li>
+            )}
+            {pendingReviews > 0 && (
+              <li>
+                <div className="px-4 py-4 sm:px-6">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="bg-yellow-100 rounded-md p-2 mr-4">
+                        <Star className="h-5 w-5 text-yellow-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-gray-900">{pendingReviews} review{pendingReviews !== 1 ? 's' : ''} pending verification</p>
+                        <p className="text-xs text-gray-500">Awaiting moderation</p>
+                      </div>
                     </div>
-                    <p className="text-sm font-medium text-gray-900">New review submitted</p>
                   </div>
-                  <div className="text-sm text-gray-500">1 hour ago</div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <div className="px-4 py-4 sm:px-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="bg-green-100 rounded-md p-2 mr-4">
-                      <Users className="h-5 w-5 text-green-600" />
+              </li>
+            )}
+            {newInquiries > 0 && (
+              <li>
+                <div className="px-4 py-4 sm:px-6">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="bg-red-100 rounded-md p-2 mr-4">
+                        <MessageSquare className="h-5 w-5 text-red-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-gray-900">{newInquiries} new contact inquiry/ies</p>
+                        <p className="text-xs text-gray-500">Requires response</p>
+                      </div>
                     </div>
-                    <p className="text-sm font-medium text-gray-900">New user registered</p>
                   </div>
-                  <div className="text-sm text-gray-500">3 hours ago</div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <div className="px-4 py-4 sm:px-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="bg-red-100 rounded-md p-2 mr-4">
-                      <MessageSquare className="h-5 w-5 text-red-600" />
+              </li>
+            )}
+            {stats.totalUsers > 0 && (
+              <li>
+                <div className="px-4 py-4 sm:px-6">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <div className="bg-green-100 rounded-md p-2 mr-4">
+                        <Users className="h-5 w-5 text-green-600" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-gray-900">{stats.totalUsers} total user{stats.totalUsers !== 1 ? 's' : ''}</p>
+                        <p className="text-xs text-gray-500">Registered on platform</p>
+                      </div>
                     </div>
-                    <p className="text-sm font-medium text-gray-900">New contact inquiry</p>
                   </div>
-                  <div className="text-sm text-gray-500">5 hours ago</div>
                 </div>
-              </div>
-            </li>
+              </li>
+            )}
           </ul>
         </div>
       </div>

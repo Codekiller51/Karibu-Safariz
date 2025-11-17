@@ -470,12 +470,18 @@ export const admin: AdminOperations = {
   getAllBookings: async () => {
     await admin.checkAdminStatus();
     if (!admin.isAdmin) return { data: null, error: { message: 'Unauthorized' } };
-    
+
     // First try with the join, fallback to simple query if relationship issues
     const { data, error } = await supabase
       .from('bookings')
       .select(`
         *,
+        profiles (
+          id,
+          full_name,
+          email,
+          phone
+        ),
         tour_packages (
           title,
           category,
@@ -483,7 +489,7 @@ export const admin: AdminOperations = {
         )
       `)
       .order('created_at', { ascending: false });
-    
+
     // If join fails due to missing relationship, get bookings without joins
     if (error && error.code === 'PGRST200') {
       return await supabase
@@ -491,7 +497,7 @@ export const admin: AdminOperations = {
         .select('*')
         .order('created_at', { ascending: false });
     }
-    
+
     return { data, error };
   },
   
