@@ -27,69 +27,113 @@ const Dashboard: React.FC = () => {
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [dataErrors, setDataErrors] = useState<Record<string, string>>({});
+
+  const fetchDashboardData = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      setDataErrors({});
+
+      const results = await Promise.allSettled([
+        admin.getAllTourPackages(),
+        admin.getAllUsers(),
+        admin.getAllBookings(),
+        admin.getAllReviews(false),
+        admin.getAllContactInquiries(),
+        admin.getAllPayments()
+      ]);
+
+      const [toursResult, usersResult, bookingsResult, reviewsResult, inquiriesResult, paymentsResult] = results;
+
+      const tours = toursResult.status === 'fulfilled' && !toursResult.value.error ? toursResult.value.data : null;
+      const users = usersResult.status === 'fulfilled' && !usersResult.value.error ? usersResult.value.data : null;
+      const bookings = bookingsResult.status === 'fulfilled' && !bookingsResult.value.error ? bookingsResult.value.data : null;
+      const reviews = reviewsResult.status === 'fulfilled' && !reviewsResult.value.error ? reviewsResult.value.data : null;
+      const inquiries = inquiriesResult.status === 'fulfilled' && !inquiriesResult.value.error ? inquiriesResult.value.data : null;
+      const payments = paymentsResult.status === 'fulfilled' && !paymentsResult.value.error ? paymentsResult.value.data : null;
+
+      const errors: Record<string, string> = {};
+
+      if (toursResult.status === 'rejected') {
+        errors.tours = 'Failed to load tours';
+      } else if (toursResult.value.error) {
+        errors.tours = 'Failed to load tours';
+      }
+
+      if (usersResult.status === 'rejected') {
+        errors.users = 'Failed to load users';
+      } else if (usersResult.value.error) {
+        errors.users = 'Failed to load users';
+      }
+
+      if (bookingsResult.status === 'rejected') {
+        errors.bookings = 'Failed to load bookings';
+      } else if (bookingsResult.value.error) {
+        errors.bookings = 'Failed to load bookings';
+      }
+
+      if (reviewsResult.status === 'rejected') {
+        errors.reviews = 'Failed to load reviews';
+      } else if (reviewsResult.value.error) {
+        errors.reviews = 'Failed to load reviews';
+      }
+
+      if (inquiriesResult.status === 'rejected') {
+        errors.inquiries = 'Failed to load inquiries';
+      } else if (inquiriesResult.value.error) {
+        errors.inquiries = 'Failed to load inquiries';
+      }
+
+      if (paymentsResult.status === 'rejected') {
+        errors.payments = 'Failed to load payments';
+      } else if (paymentsResult.value.error) {
+        errors.payments = 'Failed to load payments';
+      }
+
+      if (Object.keys(errors).length > 0) {
+        setDataErrors(errors);
+        console.warn('Some dashboard data failed to load:', errors);
+      }
+
+      // Calculate stats with fallbacks
+      const pendingBookings = bookings?.filter(booking => booking.status === 'pending').length || 0;
+      const pendingReviews = reviews?.filter(review => !review.verified).length || 0;
+      const newInquiries = inquiries?.filter(inquiry => inquiry.status === 'new').length || 0;
+
+      // Calculate total revenue
+      const totalRevenue = payments?.reduce((sum, payment) => {
+        if (payment.status === 'completed' && payment.amount) {
+          return sum + (typeof payment.amount === 'string' ? parseFloat(payment.amount) : payment.amount);
+        }
+        return sum;
+      }, 0) || 0;
+
+      setStats({
+        totalTours: tours?.length || 0,
+        totalUsers: users?.length || 0,
+        totalBookings: bookings?.length || 0,
+        totalReviews: reviews?.length || 0,
+        totalInquiries: inquiries?.length || 0,
+        pendingBookings,
+        pendingReviews,
+        newInquiries,
+        totalRevenue
+      });
+
+      if (Object.keys(errors).length === 6) {
+        setError('Unable to load dashboard data. Please check your connection and try again.');
+      }
+
+    } catch (err) {
+      console.error('Unexpected error fetching dashboard data:', err);
+      setError('An unexpected error occurred. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchDashboardData = async () => {
-      try {
-        setLoading(true);
-        
-        // Fetch tours
-        const { data: tours, error: toursError } = await admin.getAllTourPackages();
-        if (toursError) throw toursError;
-        
-        // Fetch users
-        const { data: users, error: usersError } = await admin.getAllUsers();
-        if (usersError) throw usersError;
-        
-        // Fetch bookings
-        const { data: bookings, error: bookingsError } = await admin.getAllBookings();
-        if (bookingsError) throw bookingsError;
-        
-        // Fetch reviews
-        const { data: reviews, error: reviewsError } = await admin.getAllReviews(false);
-        if (reviewsError) throw reviewsError;
-        
-        // Fetch inquiries
-        const { data: inquiries, error: inquiriesError } = await admin.getAllContactInquiries();
-        if (inquiriesError) throw inquiriesError;
-        
-        // Fetch payments
-        const { data: payments, error: paymentsError } = await admin.getAllPayments();
-        if (paymentsError) throw paymentsError;
-        
-        // Calculate stats
-        const pendingBookings = bookings?.filter(booking => booking.status === 'pending').length || 0;
-        const pendingReviews = reviews?.filter(review => !review.verified).length || 0;
-        const newInquiries = inquiries?.filter(inquiry => inquiry.status === 'new').length || 0;
-        
-        // Calculate total revenue
-        const totalRevenue = payments?.reduce((sum, payment) => {
-          if (payment.status === 'completed' && payment.amount) {
-            return sum + (typeof payment.amount === 'string' ? parseFloat(payment.amount) : payment.amount);
-          }
-          return sum;
-        }, 0) || 0;
-        
-        setStats({
-          totalTours: tours?.length || 0,
-          totalUsers: users?.length || 0,
-          totalBookings: bookings?.length || 0,
-          totalReviews: reviews?.length || 0,
-          totalInquiries: inquiries?.length || 0,
-          pendingBookings,
-          pendingReviews,
-          newInquiries,
-          totalRevenue
-        });
-        
-      } catch (err) {
-        console.error('Error fetching dashboard data:', err);
-        setError('Failed to load dashboard data. Please try again.');
-      } finally {
-        setLoading(false);
-      }
-    };
-    
     fetchDashboardData();
   }, []);
 
@@ -103,9 +147,22 @@ const Dashboard: React.FC = () => {
 
   if (error) {
     return (
-      <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-        <strong className="font-bold">Error:</strong>
-        <span className="block sm:inline"> {error}</span>
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="bg-red-50 border border-red-200 rounded-lg p-6 max-w-md w-full">
+          <div className="flex items-start gap-3">
+            <AlertCircle className="h-6 w-6 text-red-600 flex-shrink-0 mt-0.5" />
+            <div className="flex-1">
+              <h3 className="font-semibold text-red-900">Unable to Load Dashboard</h3>
+              <p className="text-red-700 text-sm mt-1">{error}</p>
+              <button
+                onClick={() => fetchDashboardData()}
+                className="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm font-medium transition"
+              >
+                Try Again
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -128,11 +185,42 @@ const Dashboard: React.FC = () => {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-        <p className="mt-1 text-sm text-gray-500">
-          Welcome to the Karibu Safariz admin dashboard. Here's an overview of your website's performance.
-        </p>
+        <div className="flex items-start justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+            <p className="mt-1 text-sm text-gray-500">
+              Welcome to the Karibu Safariz admin dashboard. Here's an overview of your website's performance.
+            </p>
+          </div>
+          <button
+            onClick={() => fetchDashboardData()}
+            className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+            Refresh
+          </button>
+        </div>
       </div>
+
+      {Object.keys(dataErrors).length > 0 && (
+        <div className="mb-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <div className="flex gap-3">
+            <AlertCircle className="h-5 w-5 text-yellow-600 flex-shrink-0 mt-0.5" />
+            <div className="flex-1">
+              <p className="text-sm font-medium text-yellow-900">
+                Some dashboard data couldn't be loaded:
+              </p>
+              <ul className="mt-1 text-sm text-yellow-800 space-y-0.5">
+                {Object.entries(dataErrors).map(([key, message]) => (
+                  <li key={key}>• {message}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
