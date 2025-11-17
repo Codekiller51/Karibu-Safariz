@@ -46,7 +46,7 @@ const Dashboard: React.FC = () => {
         if (bookingsError) throw bookingsError;
         
         // Fetch reviews
-        const { data: reviews, error: reviewsError } = await admin.getAllReviews();
+        const { data: reviews, error: reviewsError } = await admin.getAllReviews(false);
         if (reviewsError) throw reviewsError;
         
         // Fetch inquiries
@@ -64,8 +64,8 @@ const Dashboard: React.FC = () => {
         
         // Calculate total revenue
         const totalRevenue = payments?.reduce((sum, payment) => {
-          if (payment.status === 'completed') {
-            return sum + parseFloat(payment.amount);
+          if (payment.status === 'completed' && payment.amount) {
+            return sum + (typeof payment.amount === 'string' ? parseFloat(payment.amount) : payment.amount);
           }
           return sum;
         }, 0) || 0;
