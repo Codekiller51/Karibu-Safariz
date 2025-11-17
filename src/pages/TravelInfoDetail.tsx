@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import { db } from '../lib/supabase';
 import { ArrowLeft, Clock, Tag, CheckCircle, AlertTriangle, Info, Share2, Bookmark, Printer as Print, Download } from 'lucide-react';
 
 const TravelInfoDetail: React.FC = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
 
-  // Mock travel info data - in real app, this would come from your database
-  const travelInfo = {
+  // Mock fallback
+  const mockInfo = {
     id: '1',
     title: 'Essential Travel Tips for Tanzania',
     slug: 'essential-travel-tips-tanzania',
@@ -144,6 +145,30 @@ Understanding and respecting local customs will enhance your experience and help
     updated_at: '2024-01-15T10:00:00Z'
   };
 
+  const [info, setInfo] = useState<any>(mockInfo);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    let isMounted = true
+    const fetchInfo = async () => {
+      if (!slug) return
+      setIsLoading(true)
+      setError('')
+      const { data, error } = await db.getTravelInfoBySlug(slug)
+      if (!isMounted) return
+      if (error) {
+        setError(error.message || 'Failed to load travel guide')
+        setInfo(mockInfo)
+      } else if (data) {
+        setInfo(data)
+      }
+      setIsLoading(false)
+    }
+    fetchInfo()
+    return () => { isMounted = false }
+  }, [slug])
+
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -155,8 +180,8 @@ Understanding and respecting local customs will enhance your experience and help
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
-        title: travelInfo.title,
-        text: travelInfo.excerpt,
+        title: info.title,
+        text: info.excerpt,
         url: window.location.href,
       });
     } else {
@@ -185,15 +210,15 @@ Understanding and respecting local customs will enhance your experience and help
         {/* Header */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden mb-8">
           <img
-            src={travelInfo.featured_image}
-            alt={travelInfo.title}
+            src={info.featured_image}
+            alt={info.title}
             className="w-full h-64 md:h-80 object-cover"
           />
           <div className="p-8">
             <div className="flex items-center space-x-4 mb-4">
               <div className="flex items-center space-x-1 text-gray-500">
                 <Clock className="h-4 w-4" />
-                <span className="text-sm">Updated {formatDate(travelInfo.updated_at)}</span>
+                <span className="text-sm">Updated {formatDate(info.updated_at)}</span>
               </div>
               <div className="flex space-x-2">
                 <button
@@ -214,16 +239,16 @@ Understanding and respecting local customs will enhance your experience and help
             </div>
 
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              {travelInfo.title}
+              {info.title}
             </h1>
             
             <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-              {travelInfo.excerpt}
+              {info.excerpt}
             </p>
 
             {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-6">
-              {travelInfo.tags.map((tag, index) => (
+              {(info.tags || []).map((tag: string, index: number) => (
                 <span
                   key={index}
                   className="inline-flex items-center space-x-1 bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm"
@@ -241,7 +266,7 @@ Understanding and respecting local customs will enhance your experience and help
           <div className="lg:col-span-2">
             <div className="bg-white rounded-lg shadow-lg p-8">
               <div className="prose max-w-none">
-                {travelInfo.content.split('\n\n').map((section, index) => {
+                {(info.content || '').split('\n\n').map((section: string, index: number) => {
                   if (section.startsWith('## ')) {
                     return (
                       <h2 key={index} className="text-2xl font-bold text-gray-900 mt-8 mb-4 border-b-2 border-orange-200 pb-2">
@@ -288,7 +313,7 @@ Understanding and respecting local customs will enhance your experience and help
             <div className="bg-white rounded-lg shadow-lg p-6 mb-6 sticky top-24">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Quick Facts</h3>
               <div className="space-y-3">
-                {travelInfo.quick_facts.map((fact, index) => (
+                {(info.quick_facts || []).map((fact: any, index: number) => (
                   <div key={index} className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
                       <span className="text-lg">{fact.icon}</span>
@@ -301,14 +326,14 @@ Understanding and respecting local customs will enhance your experience and help
             </div>
 
             {/* Checklist */}
-            {travelInfo.checklist_items && (
+            {info.checklist_items && (
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
                 <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center space-x-2">
                   <CheckCircle className="h-5 w-5" />
                   <span>Essential Checklist</span>
                 </h3>
                 <div className="space-y-2">
-                  {travelInfo.checklist_items.map((item, index) => (
+                  {info.checklist_items.map((item: string, index: number) => (
                     <label key={index} className="flex items-start space-x-2 cursor-pointer">
                       <input
                         type="checkbox"

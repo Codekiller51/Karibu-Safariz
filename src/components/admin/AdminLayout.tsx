@@ -17,7 +17,7 @@ import {
   ChevronDown,
   Shield
 } from 'lucide-react';
-import { supabase, db } from '../../lib/supabase';
+import { supabase, admin } from '../../lib/supabase';
 
 const AdminLayout: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -36,15 +36,8 @@ const AdminLayout: React.FC = () => {
         return;
       }
       
-      const { data: profile, error } = await db.getProfile(user.id);
-      
-      if (error) {
-        console.error('Error fetching profile:', error);
-        navigate('/admin/login');
-        return;
-      }
-      
-      if (!profile?.is_admin) {
+      const isAdmin = await admin.checkAdminStatus();
+      if (!isAdmin) {
         navigate('/admin/login');
         return;
       }

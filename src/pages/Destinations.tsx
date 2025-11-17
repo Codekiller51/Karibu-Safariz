@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { MapPin, Clock, Star, Camera, Mountain, TreePine, Users, Compass, Filter, Search } from 'lucide-react';
+import { db } from '../lib/supabase';
 
 const Destinations: React.FC = () => {
   const { category } = useParams();
   const [selectedCategory, setSelectedCategory] = useState(category || 'all');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState('');
+  const [destinations, setDestinations] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
 
   const categories = [
     { id: 'all', name: 'All Destinations', icon: Compass },
@@ -17,121 +21,28 @@ const Destinations: React.FC = () => {
     { id: 'adventure', name: 'Adventure Spots', icon: Star },
   ];
 
-  // Mock destinations data - in real app, this would come from your database
-  const destinations = [
-    {
-      id: '1',
-      name: 'Mount Kilimanjaro',
-      slug: 'mount-kilimanjaro',
-      category: 'mountain',
-      short_description: 'Africa\'s highest peak and the world\'s tallest free-standing mountain',
-      featured_image: 'https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg?auto=compress&cs=tinysrgb&w=800',
-      location: { region: 'Kilimanjaro', district: 'Moshi' },
-      difficulty_level: 'challenging',
-      duration_recommended: '5-9 days',
-      highlights: ['Uhuru Peak (5,895m)', 'Glaciers', 'Multiple Climate Zones', 'Sunrise Views'],
-      activities: ['Mountain Climbing', 'Photography', 'Wildlife Viewing'],
-      featured: true
-    },
-    {
-      id: '2',
-      name: 'Serengeti National Park',
-      slug: 'serengeti-national-park',
-      category: 'park',
-      short_description: 'Home to the Great Migration and endless plains teeming with wildlife',
-      featured_image: 'https://images.pexels.com/photos/631292/pexels-photo-631292.jpeg?auto=compress&cs=tinysrgb&w=800',
-      location: { region: 'Mara', district: 'Serengeti' },
-      difficulty_level: 'easy',
-      duration_recommended: '3-7 days',
-      highlights: ['Great Migration', 'Big Five', 'Endless Plains', 'Hot Air Balloons'],
-      activities: ['Game Drives', 'Photography', 'Balloon Safaris'],
-      featured: true
-    },
-    {
-      id: '3',
-      name: 'Ngorongoro Crater',
-      slug: 'ngorongoro-crater',
-      category: 'park',
-      short_description: 'The world\'s largest inactive volcanic caldera, a natural wildlife sanctuary',
-      featured_image: 'https://images.pexels.com/photos/1230302/pexels-photo-1230302.jpeg?auto=compress&cs=tinysrgb&w=800',
-      location: { region: 'Arusha', district: 'Ngorongoro' },
-      difficulty_level: 'easy',
-      duration_recommended: '1-2 days',
-      highlights: ['Crater Floor', 'Black Rhinos', 'Flamingo Lakes', 'Maasai Culture'],
-      activities: ['Game Drives', 'Cultural Tours', 'Photography'],
-      featured: true
-    },
-    {
-      id: '4',
-      name: 'Stone Town, Zanzibar',
-      slug: 'stone-town-zanzibar',
-      category: 'cultural',
-      short_description: 'UNESCO World Heritage site with rich Swahili culture and architecture',
-      featured_image: 'https://images.pexels.com/photos/1670732/pexels-photo-1670732.jpeg?auto=compress&cs=tinysrgb&w=800',
-      location: { region: 'Zanzibar', district: 'Stone Town' },
-      difficulty_level: 'easy',
-      duration_recommended: '2-3 days',
-      highlights: ['Historic Architecture', 'Spice Markets', 'Sunset Dhow Cruises', 'Cultural Museums'],
-      activities: ['Walking Tours', 'Spice Tours', 'Cultural Experiences'],
-      featured: true
-    },
-    {
-      id: '5',
-      name: 'Tarangire National Park',
-      slug: 'tarangire-national-park',
-      category: 'park',
-      short_description: 'Famous for its large elephant herds and iconic baobab trees',
-      featured_image: 'https://images.pexels.com/photos/1054655/pexels-photo-1054655.jpeg?auto=compress&cs=tinysrgb&w=800',
-      location: { region: 'Manyara', district: 'Tarangire' },
-      difficulty_level: 'easy',
-      duration_recommended: '1-3 days',
-      highlights: ['Elephant Herds', 'Baobab Trees', 'Tarangire River', 'Bird Watching'],
-      activities: ['Game Drives', 'Walking Safaris', 'Photography'],
-      featured: false
-    },
-    {
-      id: '6',
-      name: 'Mount Meru',
-      slug: 'mount-meru',
-      category: 'mountain',
-      short_description: 'Tanzania\'s second highest peak, perfect for Kilimanjaro acclimatization',
-      featured_image: 'https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=800',
-      location: { region: 'Arusha', district: 'Arusha' },
-      difficulty_level: 'moderate',
-      duration_recommended: '3-4 days',
-      highlights: ['Socialist Peak (4,566m)', 'Ash Cone', 'Wildlife', 'Kilimanjaro Views'],
-      activities: ['Mountain Climbing', 'Wildlife Viewing', 'Photography'],
-      featured: false
-    },
-    {
-      id: '7',
-      name: 'Maasai Villages',
-      slug: 'maasai-villages',
-      category: 'cultural',
-      short_description: 'Experience authentic Maasai culture and traditional way of life',
-      featured_image: 'https://images.pexels.com/photos/1821644/pexels-photo-1821644.jpeg?auto=compress&cs=tinysrgb&w=800',
-      location: { region: 'Arusha', district: 'Various' },
-      difficulty_level: 'easy',
-      duration_recommended: '1-2 days',
-      highlights: ['Traditional Bomas', 'Cultural Ceremonies', 'Handicrafts', 'Storytelling'],
-      activities: ['Cultural Tours', 'Traditional Dancing', 'Craft Making'],
-      featured: false
-    },
-    {
-      id: '8',
-      name: 'Pemba Island',
-      slug: 'pemba-island',
-      category: 'coastal',
-      short_description: 'The green island with pristine beaches and world-class diving',
-      featured_image: 'https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=800',
-      location: { region: 'Zanzibar', district: 'Pemba' },
-      difficulty_level: 'easy',
-      duration_recommended: '3-5 days',
-      highlights: ['Coral Reefs', 'Pristine Beaches', 'Spice Plantations', 'Traditional Dhows'],
-      activities: ['Diving', 'Snorkeling', 'Beach Relaxation', 'Spice Tours'],
-      featured: false
+  useEffect(() => {
+    setSelectedCategory(category || 'all')
+  }, [category])
+
+  useEffect(() => {
+    let isMounted = true
+    const fetchDestinations = async () => {
+      setIsLoading(true)
+      setError('')
+      const { data, error } = await db.getDestinations()
+      if (!isMounted) return
+      if (error) {
+        setError(error.message || 'Failed to load destinations')
+        setDestinations([])
+      } else {
+        setDestinations(data || [])
+      }
+      setIsLoading(false)
     }
-  ];
+    fetchDestinations()
+    return () => { isMounted = false }
+  }, [])
 
   const filteredDestinations = destinations.filter(destination => {
     const matchesCategory = selectedCategory === 'all' || destination.category === selectedCategory;
@@ -218,7 +129,7 @@ const Destinations: React.FC = () => {
                     <div className="flex items-center justify-between text-xs text-gray-500">
                       <div className="flex items-center space-x-1">
                         <MapPin className="h-3 w-3" />
-                        <span>{destination.location.region}</span>
+                        <span>{destination.location?.region}</span>
                       </div>
                       <div className="flex items-center space-x-1">
                         <Clock className="h-3 w-3" />
@@ -311,8 +222,11 @@ const Destinations: React.FC = () => {
         {/* Results */}
         <div className="mb-6">
           <p className="text-gray-600">
-            Showing {filteredDestinations.length} destinations
+            {isLoading ? 'Loading destinations...' : `Showing ${filteredDestinations.length} destinations`}
           </p>
+          {error && (
+            <p className="text-red-600 text-sm mt-2">{error}</p>
+          )}
         </div>
 
         {/* Destinations Grid */}
@@ -355,7 +269,7 @@ const Destinations: React.FC = () => {
                     <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                       <div className="flex items-center space-x-1">
                         <MapPin className="h-4 w-4" />
-                        <span>{destination.location.region}</span>
+                        <span>{destination.location?.region}</span>
                       </div>
                       <div className="flex items-center space-x-1">
                         <Clock className="h-4 w-4" />

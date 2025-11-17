@@ -55,11 +55,9 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 export const db = {
   // Profile operations
   getProfile: async (userId: string) => {
-    return await supabase
-      .from('profiles')
-      .select('*')
-      .eq('id', userId)
-      .single();
+    const { data, error } = await supabase.rpc('get_my_profile');
+    if (error) return { data: null, error } as any;
+    return { data, error: null } as any;
   },
 
   updateProfile: async (userId: string, updates: any) => {
@@ -384,16 +382,9 @@ export const admin: AdminOperations = {
     try {
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) return false;
-      
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('is_admin')
-        .eq('id', user.id)
-        .single();
-      
+      const { data, error } = await supabase.rpc('is_admin');
       if (error) throw error;
-      
-      admin.isAdmin = data?.is_admin || false;
+      admin.isAdmin = Boolean(data);
       return admin.isAdmin;
     } catch (error) {
       console.error('Error checking admin status:', error);
@@ -406,23 +397,15 @@ export const admin: AdminOperations = {
   getAllUsers: async () => {
     await admin.checkAdminStatus();
     if (!admin.isAdmin) return { data: null, error: { message: 'Unauthorized' } };
-    
-    return await supabase
-      .from('profiles')
-      .select('*')
-      .order('created_at', { ascending: false });
+    const { data, error } = await supabase.rpc('get_all_users');
+    return { data, error } as any;
   },
   
   updateUserAdmin: async (userId: string, isAdmin: boolean) => {
     await admin.checkAdminStatus();
     if (!admin.isAdmin) return { data: null, error: { message: 'Unauthorized' } };
-    
-    return await supabase
-      .from('profiles')
-      .update({ is_admin: isAdmin, updated_at: new Date().toISOString() })
-      .eq('id', userId)
-      .select()
-      .single();
+    const { data, error } = await supabase.rpc('set_user_admin', { target_id: userId, make_admin: isAdmin });
+    return { data, error } as any;
   },
   
   // Tour package management
@@ -493,11 +476,6 @@ export const admin: AdminOperations = {
       .from('bookings')
       .select(`
         *,
-        profiles (
-          full_name,
-          phone,
-          email
-        ),
         tour_packages (
           title,
           category,
@@ -541,9 +519,6 @@ export const admin: AdminOperations = {
       .from('reviews')
       .select(`
         *,
-        profiles (
-          full_name
-        ),
         tour_packages (
           title,
           category
@@ -770,10 +745,6 @@ export const admin: AdminOperations = {
           tour_id,
           start_date,
           participants,
-          profiles (
-            full_name,
-            full_name
-          ),
           tour_packages (
             title
           )
@@ -796,7 +767,6 @@ export const admin: AdminOperations = {
           user_id,
           tour_id,
           profiles (
-            full_name,
             full_name
           ),
           tour_packages (

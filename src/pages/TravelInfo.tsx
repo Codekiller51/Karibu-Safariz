@@ -17,11 +17,15 @@ import {
   Clock,
   MapPin
 } from 'lucide-react';
+import { db } from '../lib/supabase';
 
 const TravelInfo: React.FC = () => {
   const { category } = useParams();
   const [selectedCategory, setSelectedCategory] = useState(category || 'all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [infoList, setInfoList] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState('');
 
   const categories = [
     { id: 'all', name: 'All Information', icon: Compass, color: 'bg-blue-500' },
@@ -33,6 +37,29 @@ const TravelInfo: React.FC = () => {
     { id: 'currency', name: 'Currency & Payments', icon: DollarSign, color: 'bg-indigo-500' },
     { id: 'weather', name: 'Weather Information', icon: Cloud, color: 'bg-cyan-500' }
   ];
+
+  useEffect(() => {
+    setSelectedCategory(category || 'all')
+  }, [category])
+
+  useEffect(() => {
+    let isMounted = true
+    const fetchInfo = async () => {
+      setIsLoading(true)
+      setError('')
+      const { data, error } = await db.getTravelInfo()
+      if (!isMounted) return
+      if (error) {
+        setError(error.message || 'Failed to load travel information')
+        setInfoList([])
+      } else {
+        setInfoList(data || [])
+      }
+      setIsLoading(false)
+    }
+    fetchInfo()
+    return () => { isMounted = false }
+  }, [])
 
   // Mock travel info data - in real app, this would come from your database
   const travelInfoData = [
@@ -429,7 +456,8 @@ Tanzania is a malaria-endemic country. Prevention includes:
     }
   ];
 
-  const filteredInfo = travelInfoData.filter(info => {
+  const source = infoList.length ? infoList : travelInfoData;
+  const filteredInfo = source.filter(info => {
     const matchesCategory = selectedCategory === 'all' || info.category === selectedCategory;
     const matchesSearch = info.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          info.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -438,7 +466,7 @@ Tanzania is a malaria-endemic country. Prevention includes:
     return matchesCategory && matchesSearch;
   });
 
-  const featuredInfo = travelInfoData.filter(info => info.featured);
+  const featuredInfo = source.filter(info => info.featured);
 
   const getCategoryData = (categoryId: string) => {
     return categories.find(cat => cat.id === categoryId) || categories[0];
@@ -565,8 +593,11 @@ Tanzania is a malaria-endemic country. Prevention includes:
         {/* Results */}
         <div className="mb-6">
           <p className="text-gray-600">
-            Showing {filteredInfo.length} travel guides
+            {isLoading ? 'Loading travel guides...' : `Showing ${filteredInfo.length} travel guides`}
           </p>
+          {error && (
+            <p className="text-red-600 text-sm mt-2">{error}</p>
+          )}
         </div>
 
         {/* Information Grid */}

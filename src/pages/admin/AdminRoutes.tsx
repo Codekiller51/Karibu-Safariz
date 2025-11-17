@@ -9,6 +9,10 @@ import BlogManagement from './BlogManagement';
 import BlogForm from './BlogForm';
 import TravelInfoManagement from './TravelInfoManagement';
 import TravelInfoForm from './TravelInfoForm';
+import BookingsManagement from './BookingsManagement';
+import UsersManagement from './UsersManagement';
+import ReviewsManagement from './ReviewsManagement';
+import InquiriesManagement from './InquiriesManagement';
 
 const AdminRoutes: React.FC = () => {
   return (
@@ -26,11 +30,11 @@ const AdminRoutes: React.FC = () => {
         <Route path="travel-info" element={<TravelInfoManagement />} />
         <Route path="travel-info/new" element={<TravelInfoForm />} />
         <Route path="travel-info/edit/:id" element={<TravelInfoForm />} />
-        <Route path="bookings" element={<div>Bookings Management</div>} />
-        <Route path="users" element={<div>Users Management</div>} />
-        <Route path="reviews" element={<div>Reviews Management</div>} />
+        <Route path="bookings" element={<BookingsManagement />} />
+        <Route path="users" element={<UsersManagement />} />
+        <Route path="reviews" element={<ReviewsManagement />} />
         <Route path="destinations" element={<div>Destinations Management</div>} />
-        <Route path="inquiries" element={<div>Inquiries Management</div>} />
+        <Route path="inquiries" element={<InquiriesManagement />} />
         <Route path="settings" element={<div>Settings</div>} />
         <Route path="*" element={<Navigate to="/admin/dashboard" replace />} />
       </Route>

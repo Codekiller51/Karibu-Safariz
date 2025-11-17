@@ -19,6 +19,8 @@ import TravelInfo from './pages/TravelInfo';
 import TravelInfoDetail from './pages/TravelInfoDetail';
 import LoginForm from './components/auth/LoginForm';
 import RegisterForm from './components/auth/RegisterForm';
+import ForgotPassword from './components/auth/ForgotPassword';
+import ResetPassword from './components/auth/ResetPassword';
 import About from './pages/About';
 import OurStory from './pages/about/OurStory';
 import OurTeam from './pages/about/OurTeam';
@@ -54,6 +56,8 @@ function AppContent() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/register" element={<RegisterForm />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/about" element={<About />} />
             <Route path="/about/story" element={<OurStory />} />
             <Route path="/about/team" element={<OurTeam />} />
