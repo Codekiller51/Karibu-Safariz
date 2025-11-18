@@ -42,7 +42,7 @@ const SpecialTrips: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection animation="slide-up" className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Winter Special Trip
+            Seasonal Trips
           </h2>
           <p className="text-lg text-gray-600">
             Experience unforgettable seasonal adventures

@@ -12,7 +12,6 @@ const Tours: React.FC = () => {
   const [filteredTours, setFilteredTours] = useState<TourPackage[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedDifficulty, setSelectedDifficulty] = useState('');
   const [selectedDuration, setSelectedDuration] = useState('');
   const [priceRange, setPriceRange] = useState('');
 
@@ -73,11 +72,6 @@ const Tours: React.FC = () => {
       );
     }
 
-    // Difficulty filter
-    if (selectedDifficulty) {
-      filtered = filtered.filter(tour => tour.difficulty === selectedDifficulty);
-    }
-
     // Duration filter
     if (selectedDuration) {
       const [min, max] = selectedDuration.split('-').map(Number);
@@ -101,11 +95,10 @@ const Tours: React.FC = () => {
     }
 
     setFilteredTours(filtered);
-  }, [tours, searchTerm, selectedDifficulty, selectedDuration, priceRange]);
+  }, [tours, searchTerm, selectedDuration, priceRange]);
 
   const clearFilters = () => {
     setSearchTerm('');
-    setSelectedDifficulty('');
     setSelectedDuration('');
     setPriceRange('');
   };
@@ -160,66 +153,68 @@ const Tours: React.FC = () => {
         </div>
 
         {/* Filters */}
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="bg-white rounded-lg shadow-lg p-6 md:p-8 mb-8">
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Refine Your Search</h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Search */}
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search tours..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              />
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Search</label>
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search tours..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
             </div>
 
-            {/* Difficulty */}
-            <select
-              value={selectedDifficulty}
-              onChange={(e) => setSelectedDifficulty(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option value="">All Difficulties</option>
-              <option value="easy">Easy</option>
-              <option value="moderate">Moderate</option>
-              <option value="challenging">Challenging</option>
-              <option value="extreme">Extreme</option>
-            </select>
-
             {/* Duration */}
-            <select
-              value={selectedDuration}
-              onChange={(e) => setSelectedDuration(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option value="">All Durations</option>
-              <option value="1-1">1 Day</option>
-              <option value="2-3">2-3 Days</option>
-              <option value="4-7">4-7 Days</option>
-              <option value="8">8+ Days</option>
-            </select>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Duration</label>
+              <select
+                value={selectedDuration}
+                onChange={(e) => setSelectedDuration(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              >
+                <option value="">All Durations</option>
+                <option value="1-1">1 Day</option>
+                <option value="2-3">2-3 Days</option>
+                <option value="4-7">4-7 Days</option>
+                <option value="8">8+ Days</option>
+              </select>
+            </div>
 
             {/* Price Range */}
-            <select
-              value={priceRange}
-              onChange={(e) => setPriceRange(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option value="">All Prices</option>
-              <option value="0-500">Under $500</option>
-              <option value="500-1000">$500 - $1,000</option>
-              <option value="1000-2000">$1,000 - $2,000</option>
-              <option value="2000">$2,000+</option>
-            </select>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+              <select
+                value={priceRange}
+                onChange={(e) => setPriceRange(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              >
+                <option value="">All Prices</option>
+                <option value="0-500">Under $500</option>
+                <option value="500-1000">$500 - $1,000</option>
+                <option value="1000-2000">$1,000 - $2,000</option>
+                <option value="2000">$2,000+</option>
+              </select>
+            </div>
 
             {/* Clear Filters */}
-            <button
-              onClick={clearFilters}
-              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
-            >
-              Clear Filters
-            </button>
+            <div className="flex items-end">
+              <button
+                onClick={clearFilters}
+                className="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              >
+                Clear Filters
+              </button>
+            </div>
           </div>
         </div>
 

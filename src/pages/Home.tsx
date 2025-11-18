@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroNew from '../components/home/HeroNew';
+import FeaturedTripsSlider from '../components/home/FeaturedTripsSlider';
 import TrustBadges from '../components/common/TrustBadges';
 import SocialProof from '../components/common/SocialProof';
 import PopularLocations from '../components/home/PopularLocations';
@@ -13,7 +13,7 @@ import Testimonials from '../components/home/Testimonials';
 const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
-      <HeroNew />
+      <FeaturedTripsSlider />
       <SocialProof />
       <TrustBadges />
       <PopularLocations />

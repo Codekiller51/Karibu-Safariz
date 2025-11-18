@@ -50,7 +50,7 @@ const AdminLayout: React.FC = () => {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
-    navigate('/admin/login');
+    navigate('/');
   };
 
   const navigation = [

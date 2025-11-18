@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Calendar, Clock, Users, Star, MapPin, Check, X, ArrowLeft } from 'lucide-react';
+import { Calendar, Clock, Users, Star, MapPin, Check, X, ArrowLeft, CheckCircle } from 'lucide-react';
 import { TourPackage, Review } from '../types';
 import { db, supabase } from '../lib/supabase';
 import ReviewsList from '../components/reviews/ReviewsList';
