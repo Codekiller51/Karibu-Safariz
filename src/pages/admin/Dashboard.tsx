@@ -335,7 +335,7 @@ const Dashboard: React.FC = () => {
         <h2 className="text-lg font-medium text-gray-900 mb-4">Recent Activity</h2>
         <div className="bg-white shadow overflow-hidden sm:rounded-md">
           <ul className="divide-y divide-gray-200">
-            {pendingBookings > 0 && (
+            {stats.pendingBookings > 0 && (
               <li>
                 <div className="px-4 py-4 sm:px-6">
                   <div className="flex items-center justify-between">
@@ -344,7 +344,7 @@ const Dashboard: React.FC = () => {
                         <CreditCard className="h-5 w-5 text-blue-600" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-gray-900">{pendingBookings} pending booking{pendingBookings !== 1 ? 's' : ''}</p>
+                        <p className="text-sm font-medium text-gray-900">{stats.pendingBookings} pending booking{stats.pendingBookings !== 1 ? 's' : ''}</p>
                         <p className="text-xs text-gray-500">Awaiting confirmation</p>
                       </div>
                     </div>
@@ -352,7 +352,7 @@ const Dashboard: React.FC = () => {
                 </div>
               </li>
             )}
-            {pendingReviews > 0 && (
+            {stats.pendingReviews > 0 && (
               <li>
                 <div className="px-4 py-4 sm:px-6">
                   <div className="flex items-center justify-between">
@@ -361,7 +361,7 @@ const Dashboard: React.FC = () => {
                         <Star className="h-5 w-5 text-yellow-600" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-gray-900">{pendingReviews} review{pendingReviews !== 1 ? 's' : ''} pending verification</p>
+                        <p className="text-sm font-medium text-gray-900">{stats.pendingReviews} review{stats.pendingReviews !== 1 ? 's' : ''} pending verification</p>
                         <p className="text-xs text-gray-500">Awaiting moderation</p>
                       </div>
                     </div>
@@ -369,7 +369,7 @@ const Dashboard: React.FC = () => {
                 </div>
               </li>
             )}
-            {newInquiries > 0 && (
+            {stats.newInquiries > 0 && (
               <li>
                 <div className="px-4 py-4 sm:px-6">
                   <div className="flex items-center justify-between">
@@ -378,7 +378,7 @@ const Dashboard: React.FC = () => {
                         <MessageSquare className="h-5 w-5 text-red-600" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-gray-900">{newInquiries} new contact inquiry/ies</p>
+                        <p className="text-sm font-medium text-gray-900">{stats.newInquiries} new contact inquiry/ies</p>
                         <p className="text-xs text-gray-500">Requires response</p>
                       </div>
                     </div>
