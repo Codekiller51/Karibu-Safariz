@@ -52,7 +52,7 @@ const DestinationManagement: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
       </div>
     )
   }
@@ -66,7 +66,7 @@ const DestinationManagement: React.FC = () => {
         </div>
         <Link
           to="/admin/destinations/new"
-          className="inline-flex items-center px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg text-sm font-medium"
+          className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium"
         >
           <Plus className="h-4 w-4 mr-2" />
           Add Destination
@@ -81,7 +81,7 @@ const DestinationManagement: React.FC = () => {
             placeholder="Search destinations..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+            className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
         <div className="mt-2 text-sm text-gray-600">Showing {filtered.length} of {destinations.length} destinations</div>

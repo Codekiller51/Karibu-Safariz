@@ -518,7 +518,7 @@ Tanzania is a malaria-endemic country. Prevention includes:
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                       {info.title}
                     </h3>
                     <p className="text-gray-600 text-sm mb-3 line-clamp-2">
@@ -552,7 +552,7 @@ Tanzania is a malaria-endemic country. Prevention includes:
                 placeholder="Search travel information..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -562,7 +562,7 @@ Tanzania is a malaria-endemic country. Prevention includes:
                 setSearchTerm('');
                 setSelectedCategory('all');
               }}
-              className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700 transition-colors"
+              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
             >
               Clear Filters
             </button>
@@ -579,8 +579,8 @@ Tanzania is a malaria-endemic country. Prevention includes:
                 onClick={() => setSelectedCategory(category.id)}
                 className={`flex items-center space-x-2 px-6 py-3 rounded-lg transition-colors ${
                   selectedCategory === category.id
-                    ? 'bg-orange-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-orange-50 border border-gray-300'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white text-gray-700 hover:bg-blue-50 border border-gray-300'
                 }`}
               >
                 <IconComponent className="h-5 w-5" />
@@ -634,7 +634,7 @@ Tanzania is a malaria-endemic country. Prevention includes:
                   </div>
                   
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                       {info.title}
                     </h3>
                     <p className="text-gray-600 mb-4 line-clamp-3">
@@ -662,7 +662,7 @@ Tanzania is a malaria-endemic country. Prevention includes:
                         {info.tags.slice(0, 3).map((tag, index) => (
                           <span
                             key={index}
-                            className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs"
+                            className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs"
                           >
                             {tag}
                           </span>
@@ -676,10 +676,10 @@ Tanzania is a malaria-endemic country. Prevention includes:
                     </div>
 
                     <div className="flex items-center justify-between">
-                      <div className="text-orange-600 font-semibold group-hover:text-orange-700">
+                      <div className="text-blue-600 font-semibold group-hover:text-blue-700">
                         Read Guide
                       </div>
-                      <div className="text-orange-600 group-hover:translate-x-1 transition-transform">
+                      <div className="text-blue-600 group-hover:translate-x-1 transition-transform">
                         →
                       </div>
                     </div>
@@ -696,7 +696,7 @@ Tanzania is a malaria-endemic country. Prevention includes:
                 setSearchTerm('');
                 setSelectedCategory('all');
               }}
-              className="mt-4 text-orange-600 hover:text-orange-700"
+              className="mt-4 text-blue-600 hover:text-blue-700"
             >
               Clear filters to see all guides
             </button>
@@ -751,7 +751,7 @@ Tanzania is a malaria-endemic country. Prevention includes:
         </div>
 
         {/* Call to Action */}
-        <div className="mt-16 bg-gradient-to-r from-orange-600 to-orange-800 rounded-2xl text-white p-8 md:p-12 text-center">
+        <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl text-white p-8 md:p-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Plan Your Tanzania Adventure?
           </h2>
@@ -761,13 +761,13 @@ Tanzania is a malaria-endemic country. Prevention includes:
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/tours"
-              className="bg-white text-orange-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
             >
               Browse Tours
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-orange-600 transition-colors font-semibold"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold"
             >
               Get Expert Advice
             </Link>

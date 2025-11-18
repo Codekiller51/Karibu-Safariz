@@ -159,7 +159,7 @@ What makes Kilimanjaro particularly special is that it requires no technical cli
     switch (difficulty) {
       case 'easy': return 'bg-green-100 text-green-800';
       case 'moderate': return 'bg-yellow-100 text-yellow-800';
-      case 'challenging': return 'bg-orange-100 text-orange-800';
+      case 'challenging': return 'bg-blue-100 text-blue-800';
       case 'extreme': return 'bg-red-100 text-red-800';
       default: return 'bg-gray-100 text-gray-800';
     }
@@ -171,7 +171,7 @@ What makes Kilimanjaro particularly special is that it requires no technical cli
         {/* Back Button */}
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center space-x-2 text-gray-600 hover:text-orange-600 mb-6"
+          className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 mb-6"
         >
           <ArrowLeft className="h-5 w-5" />
           <span>Back to Destinations</span>
@@ -201,7 +201,7 @@ What makes Kilimanjaro particularly special is that it requires no technical cli
                       key={index}
                       onClick={() => setSelectedImage(index)}
                       className={`w-20 h-20 rounded-lg overflow-hidden border-2 ${
-                        selectedImage === index ? 'border-orange-600' : 'border-gray-300'
+                        selectedImage === index ? 'border-blue-600' : 'border-gray-300'
                       }`}
                     >
                       <img src={image} alt={`${destination.name} ${index + 1}`} className="w-full h-full object-cover" />
@@ -244,7 +244,7 @@ What makes Kilimanjaro particularly special is that it requires no technical cli
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {destination.highlights.map((highlight, index) => (
                     <div key={index} className="flex items-center space-x-2">
-                      <Star className="h-5 w-5 text-orange-600" />
+                      <Star className="h-5 w-5 text-blue-600" />
                       <span className="text-gray-600">{highlight}</span>
                     </div>
                   ))}
@@ -258,7 +258,7 @@ What makes Kilimanjaro particularly special is that it requires no technical cli
                   {destination.activities.map((activity, index) => (
                     <span
                       key={index}
-                      className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm"
+                      className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
                     >
                       {activity}
                     </span>
@@ -371,10 +371,10 @@ What makes Kilimanjaro particularly special is that it requires no technical cli
                     <Link
                       key={tour.id}
                       to={`/tours/mountain-climbing/${tour.id}`}
-                      className="block p-3 border border-gray-200 rounded-lg hover:border-orange-300 hover:bg-orange-50 transition-colors"
+                      className="block p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
                     >
                       <div className="font-medium text-gray-900 text-sm mb-1">{tour.name}</div>
-                      <div className="text-orange-600 font-semibold">${tour.price}</div>
+                      <div className="text-blue-600 font-semibold">${tour.price}</div>
                     </Link>
                   ))}
                 </div>
@@ -384,13 +384,13 @@ What makes Kilimanjaro particularly special is that it requires no technical cli
               <div className="space-y-3">
                 <Link
                   to="/tours/mountain-climbing"
-                  className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold text-center block"
+                  className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-center block"
                 >
                   View All Tours
                 </Link>
                 <Link
                   to="/contact"
-                  className="w-full border border-orange-600 text-orange-600 py-3 rounded-lg hover:bg-orange-50 transition-colors font-semibold text-center block"
+                  className="w-full border border-blue-600 text-blue-600 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold text-center block"
                 >
                   Plan Custom Trip
                 </Link>

@@ -203,11 +203,11 @@ const CustomerSurvey: React.FC<CustomerSurveyProps> = ({
               {[1, 2, 3].map((step) => (
                 <div key={step} className="flex items-center">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                    currentStep >= step ? 'bg-orange-600 text-white' : 'bg-gray-300 text-gray-600'
+                    currentStep >= step ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-600'
                   }`}>
                     {step}
                   </div>
-                  <span className={`ml-2 text-sm ${currentStep >= step ? 'text-orange-600' : 'text-gray-500'}`}>
+                  <span className={`ml-2 text-sm ${currentStep >= step ? 'text-blue-600' : 'text-gray-500'}`}>
                     {step === 1 ? 'Ratings' : step === 2 ? 'Feedback' : 'Photos & Submit'}
                   </span>
                   {step < 3 && <div className="w-16 h-0.5 bg-gray-300 mx-4"></div>}
@@ -265,7 +265,7 @@ const CustomerSurvey: React.FC<CustomerSurveyProps> = ({
                   type="button"
                   onClick={() => setCurrentStep(2)}
                   disabled={watchedRatings.some(rating => !rating)}
-                  className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Continue to Feedback
                 </button>
@@ -282,7 +282,7 @@ const CustomerSurvey: React.FC<CustomerSurveyProps> = ({
                   <textarea
                     {...register('what_went_well')}
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Tell us about the highlights of your experience..."
                   />
                   {errors.what_went_well && (
@@ -297,7 +297,7 @@ const CustomerSurvey: React.FC<CustomerSurveyProps> = ({
                   <textarea
                     {...register('areas_for_improvement')}
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="How can we improve our service? (Optional)"
                   />
                 </div>
@@ -309,7 +309,7 @@ const CustomerSurvey: React.FC<CustomerSurveyProps> = ({
                   <textarea
                     {...register('additional_comments')}
                     rows={3}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Any other feedback you'd like to share? (Optional)"
                   />
                 </div>
@@ -377,7 +377,7 @@ const CustomerSurvey: React.FC<CustomerSurveyProps> = ({
                   <button
                     type="button"
                     onClick={() => setCurrentStep(3)}
-                    className="flex-1 bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold"
+                    className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
                   >
                     Continue
                   </button>
@@ -460,7 +460,7 @@ const CustomerSurvey: React.FC<CustomerSurveyProps> = ({
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex-1 bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                    className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                   >
                     {isSubmitting ? (
                       <>

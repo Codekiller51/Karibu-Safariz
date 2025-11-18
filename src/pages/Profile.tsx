@@ -279,16 +279,16 @@ const Profile: React.FC = () => {
                 <div className="absolute right-0 top-1/2 h-0.5 w-6 bg-gradient-to-l from-indigo-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
               </div>
               <div className="absolute inset-2 animate-spin-fast">
-                <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-gradient-to-b from-orange-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
+                <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-gradient-to-b from-blue-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
                 <div className="absolute bottom-0 left-1/2 w-0.5 h-4 bg-gradient-to-t from-teal-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
                 <div className="absolute left-0 top-1/2 h-0.5 w-4 bg-gradient-to-r from-lime-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
                 <div className="absolute right-0 top-1/2 h-0.5 w-4 bg-gradient-to-l from-rose-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-2 h-2 bg-orange-600 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
               </div>
             </div>
-            <div className="text-orange-600 font-semibold text-lg">Loading profile...</div>
+            <div className="text-blue-600 font-semibold text-lg">Loading profile...</div>
           </div>
         </div>
       </div>
@@ -329,7 +329,7 @@ const Profile: React.FC = () => {
                   )}
                   
                   {editing && (
-                    <label className="absolute bottom-0 right-0 bg-orange-600 hover:bg-orange-700 text-white rounded-full p-2 cursor-pointer transition-colors">
+                    <label className="absolute bottom-0 right-0 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-2 cursor-pointer transition-colors">
                       <Camera className="h-4 w-4" />
                       <input
                         type="file"
@@ -363,7 +363,7 @@ const Profile: React.FC = () => {
                         type="text"
                         value={formData.full_name}
                         onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
                     <div>
@@ -374,7 +374,7 @@ const Profile: React.FC = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
                     <div>
@@ -385,14 +385,14 @@ const Profile: React.FC = () => {
                         type="text"
                         value={formData.nationality}
                         onChange={(e) => setFormData({ ...formData, nationality: e.target.value })}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
                     <div className="flex space-x-2">
                       <button
                         onClick={handleSave}
                         disabled={uploadingAvatar}
-                        className="flex-1 bg-orange-600 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition-colors flex items-center justify-center space-x-2"
+                        className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"
                       >
                         {uploadingAvatar ? (
                           <>
@@ -421,7 +421,7 @@ const Profile: React.FC = () => {
                     <div className="mb-4">
                       <button
                         onClick={() => setEditing(true)}
-                        className="text-orange-600 hover:text-orange-700 text-sm flex items-center space-x-1"
+                        className="text-blue-600 hover:text-blue-700 text-sm flex items-center space-x-1"
                       >
                         <Camera className="h-4 w-4" />
                         <span>Change Photo</span>
@@ -443,7 +443,7 @@ const Profile: React.FC = () => {
                     </div>
                     <button
                       onClick={() => setEditing(true)}
-                      className="w-full bg-orange-600 text-white py-2 px-4 rounded-md hover:bg-orange-700 transition-colors flex items-center justify-center space-x-2"
+                      className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"
                     >
                       <Edit className="h-4 w-4" />
                       <span>Edit Profile</span>
@@ -463,7 +463,7 @@ const Profile: React.FC = () => {
                   onClick={() => setActiveTab('bookings')}
                   className={`pb-4 px-1 border-b-2 font-medium text-sm ${
                     activeTab === 'bookings'
-                      ? 'border-orange-500 text-orange-600'
+                      ? 'border-blue-500 text-blue-600'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                 >
@@ -473,7 +473,7 @@ const Profile: React.FC = () => {
                   onClick={() => setActiveTab('reviews')}
                   className={`pb-4 px-1 border-b-2 font-medium text-sm ${
                     activeTab === 'reviews'
-                      ? 'border-orange-500 text-orange-600'
+                      ? 'border-blue-500 text-blue-600'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                   }`}
                 >
@@ -525,7 +525,7 @@ const Profile: React.FC = () => {
                       )}
 
                       <div className="flex flex-wrap gap-2">
-                        <button className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700 transition-colors text-sm">
+                        <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors text-sm">
                           View Details
                         </button>
                         {booking.status === 'pending' && (
@@ -554,7 +554,7 @@ const Profile: React.FC = () => {
                   </p>
                   <button
                     onClick={() => navigate('/tours')}
-                    className="bg-orange-600 text-white px-6 py-3 rounded-md hover:bg-orange-700 transition-colors"
+                    className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors"
                   >
                     Browse Tours
                   </button>
@@ -578,7 +578,7 @@ const Profile: React.FC = () => {
                       </p>
                       <button
                         onClick={() => setActiveTab('bookings')}
-                        className="bg-orange-600 text-white px-6 py-3 rounded-md hover:bg-orange-700 transition-colors"
+                        className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors"
                       >
                         View My Bookings
                       </button>

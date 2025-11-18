@@ -70,7 +70,7 @@ const RegisterForm: React.FC = () => {
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             Or{' '}
-            <Link to="/login" className="font-medium text-orange-600 hover:text-orange-500">
+            <Link to="/login" className="font-medium text-blue-600 hover:text-blue-500">
               sign in to existing account
             </Link>
           </p>
@@ -204,11 +204,11 @@ const RegisterForm: React.FC = () => {
           <div className="text-center">
             <p className="text-xs text-gray-500">
               By creating an account, you agree to our{' '}
-              <Link to="/terms" className="text-orange-600 hover:text-orange-500">
+              <Link to="/terms" className="text-blue-600 hover:text-blue-500">
                 Terms of Service
               </Link>{' '}
               and{' '}
-              <Link to="/privacy" className="text-orange-600 hover:text-orange-500">
+              <Link to="/privacy" className="text-blue-600 hover:text-blue-500">
                 Privacy Policy
               </Link>
             </p>

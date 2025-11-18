@@ -78,16 +78,16 @@ const Blog: React.FC = () => {
                 <div className="absolute right-0 top-1/2 h-0.5 w-6 bg-gradient-to-l from-indigo-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
               </div>
               <div className="absolute inset-2 animate-spin-fast">
-                <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-gradient-to-b from-orange-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
+                <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-gradient-to-b from-blue-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
                 <div className="absolute bottom-0 left-1/2 w-0.5 h-4 bg-gradient-to-t from-teal-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
                 <div className="absolute left-0 top-1/2 h-0.5 w-4 bg-gradient-to-r from-lime-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
                 <div className="absolute right-0 top-1/2 h-0.5 w-4 bg-gradient-to-l from-rose-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-2 h-2 bg-orange-600 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
               </div>
             </div>
-            <div className="text-orange-600 font-semibold text-lg">Loading blog posts...</div>
+            <div className="text-blue-600 font-semibold text-lg">Loading blog posts...</div>
           </div>
         </div>
       </div>
@@ -121,7 +121,7 @@ const Blog: React.FC = () => {
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -133,8 +133,8 @@ const Blog: React.FC = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-md transition-colors ${
                     selectedCategory === category
-                      ? 'bg-orange-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-orange-100'
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-blue-100'
                   }`}
                 >
                   {category === 'all' ? 'All Categories' : category}
@@ -157,7 +157,7 @@ const Blog: React.FC = () => {
               </div>
               <div className="md:w-1/2 p-8">
                 <div className="flex items-center space-x-4 mb-4">
-                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
                     Featured
                   </span>
                   <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">
@@ -183,7 +183,7 @@ const Blog: React.FC = () => {
                   </div>
                   <Link
                     to={`/blog/${featuredPost.slug}`}
-                    className="inline-flex items-center space-x-2 text-orange-600 hover:text-orange-700 font-semibold"
+                    className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-semibold"
                   >
                     <span>Read More</span>
                     <ArrowRight className="h-4 w-4" />
@@ -240,7 +240,7 @@ const Blog: React.FC = () => {
                     </div>
                     <Link
                       to={`/blog/${post.slug}`}
-                      className="text-orange-600 hover:text-orange-700 font-semibold"
+                      className="text-blue-600 hover:text-blue-700 font-semibold"
                     >
                       Read More
                     </Link>
@@ -257,7 +257,7 @@ const Blog: React.FC = () => {
                 setSearchTerm('');
                 setSelectedCategory('all');
               }}
-              className="mt-4 text-orange-600 hover:text-orange-700"
+              className="mt-4 text-blue-600 hover:text-blue-700"
             >
               Clear filters to see all articles
             </button>
@@ -265,7 +265,7 @@ const Blog: React.FC = () => {
         )}
 
         {/* Newsletter Signup */}
-        <div className="mt-16 bg-orange-50 rounded-2xl p-8 md:p-12 text-center">
+        <div className="mt-16 bg-blue-50 rounded-2xl p-8 md:p-12 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Stay Updated with Our Latest Stories
           </h2>
@@ -276,9 +276,9 @@ const Blog: React.FC = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-orange-500 focus:border-orange-500"
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
             />
-            <button className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold">
+            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
               Subscribe
             </button>
           </div>

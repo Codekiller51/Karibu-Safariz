@@ -111,7 +111,7 @@ const DestinationForm: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
       </div>
     )
   }
@@ -121,7 +121,7 @@ const DestinationForm: React.FC = () => {
       <div className="mb-6">
         <button
           onClick={() => navigate('/admin/destinations')}
-          className="inline-flex items-center text-orange-600 hover:text-orange-700 mb-4"
+          className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-4"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back to Destinations
@@ -147,7 +147,7 @@ const DestinationForm: React.FC = () => {
               value={formData.name}
               onChange={handleInputChange}
               required
-              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -158,7 +158,7 @@ const DestinationForm: React.FC = () => {
               value={formData.slug}
               onChange={handleInputChange}
               required
-              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
         </div>
@@ -171,7 +171,7 @@ const DestinationForm: React.FC = () => {
             onChange={handleInputChange}
             required
             rows={2}
-            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -183,7 +183,7 @@ const DestinationForm: React.FC = () => {
             onChange={handleInputChange}
             required
             rows={4}
-            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -195,7 +195,7 @@ const DestinationForm: React.FC = () => {
               value={formData.category}
               onChange={handleInputChange}
               required
-              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="mountain">Mountain</option>
               <option value="park">Park</option>
@@ -211,7 +211,7 @@ const DestinationForm: React.FC = () => {
               value={formData.difficulty_level}
               onChange={handleInputChange}
               required
-              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="easy">Easy</option>
               <option value="moderate">Moderate</option>
@@ -230,7 +230,7 @@ const DestinationForm: React.FC = () => {
               value={formData.location.region}
               onChange={handleInputChange}
               required
-              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -240,7 +240,7 @@ const DestinationForm: React.FC = () => {
               name="location.district"
               value={formData.location.district}
               onChange={handleInputChange}
-              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
         </div>
@@ -254,7 +254,7 @@ const DestinationForm: React.FC = () => {
               name="location.latitude"
               value={formData.location.latitude}
               onChange={handleInputChange}
-              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
@@ -265,7 +265,7 @@ const DestinationForm: React.FC = () => {
               name="location.longitude"
               value={formData.location.longitude}
               onChange={handleInputChange}
-              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
         </div>
@@ -278,7 +278,7 @@ const DestinationForm: React.FC = () => {
             value={formData.featured_image}
             onChange={handleInputChange}
             required
-            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -290,7 +290,7 @@ const DestinationForm: React.FC = () => {
             onChange={handleInputChange}
             required
             rows={2}
-            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -303,7 +303,7 @@ const DestinationForm: React.FC = () => {
             onChange={handleInputChange}
             required
             placeholder="e.g., 2-3 days"
-            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -313,7 +313,7 @@ const DestinationForm: React.FC = () => {
             value={formData.activities.join('\n')}
             onChange={(e) => handleArrayInput('activities', e.target.value)}
             rows={3}
-            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -323,7 +323,7 @@ const DestinationForm: React.FC = () => {
             value={formData.highlights.join('\n')}
             onChange={(e) => handleArrayInput('highlights', e.target.value)}
             rows={3}
-            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+            className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
 
@@ -334,7 +334,7 @@ const DestinationForm: React.FC = () => {
               name="active"
               checked={formData.active}
               onChange={handleCheckboxChange}
-              className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
             />
             <span className="ml-2 text-sm text-gray-700">Active</span>
           </label>
@@ -344,7 +344,7 @@ const DestinationForm: React.FC = () => {
               name="featured"
               checked={formData.featured}
               onChange={handleCheckboxChange}
-              className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
             />
             <span className="ml-2 text-sm text-gray-700">Featured</span>
           </label>
@@ -361,7 +361,7 @@ const DestinationForm: React.FC = () => {
           <button
             type="submit"
             disabled={submitting}
-            className="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-md text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {submitting ? 'Saving...' : 'Save Destination'}
           </button>

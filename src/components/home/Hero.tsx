@@ -257,7 +257,7 @@ const Hero: React.FC = () => {
             <div className="text-white">
             <div className="mt-8 md:mt-12">
               <div className="mb-4">
-                <span className="inline-block bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wide">
+                <span className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wide">
                   {currentSlideData.category}
                 </span>
               </div>
@@ -296,7 +296,7 @@ const Hero: React.FC = () => {
                     className="w-full h-48 object-cover"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">
                       {currentSlideData.price}
                     </span>
                   </div>
@@ -325,7 +325,7 @@ const Hero: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="card-base card-shadow-xl p-6 md:p-8 mt-8">
             <div className="flex items-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-orange-600 mr-4">Find Your Tour</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-blue-600 mr-4">Find Your Tour</h2>
               <div className="text-sm text-gray-500">
                 Search from {destinations.length} destinations
               </div>
@@ -392,7 +392,7 @@ const Hero: React.FC = () => {
                   onClick={() => {
                     setSearchForm({ keyword: 'Kilimanjaro', destination: 'mountain-climbing', departureDate: '' });
                   }}
-                  className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-orange-100 hover:text-orange-700 transition-colors"
+                  className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-blue-100 hover:text-blue-700 transition-colors"
                 >
                   Kilimanjaro Climbing
                 </button>
@@ -400,7 +400,7 @@ const Hero: React.FC = () => {
                   onClick={() => {
                     setSearchForm({ keyword: 'Safari', destination: 'safari', departureDate: '' });
                   }}
-                  className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-orange-100 hover:text-orange-700 transition-colors"
+                  className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-blue-100 hover:text-blue-700 transition-colors"
                 >
                   Serengeti Safari
                 </button>
@@ -408,7 +408,7 @@ const Hero: React.FC = () => {
                   onClick={() => {
                     setSearchForm({ keyword: 'Day trip', destination: 'day-trips', departureDate: '' });
                   }}
-                  className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-orange-100 hover:text-orange-700 transition-colors"
+                  className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-blue-100 hover:text-blue-700 transition-colors"
                 >
                   Day Trips
                 </button>
@@ -416,7 +416,7 @@ const Hero: React.FC = () => {
                   onClick={() => {
                     setSearchForm({ keyword: 'Ngorongoro', destination: '', departureDate: '' });
                   }}
-                  className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-orange-100 hover:text-orange-700 transition-colors"
+                  className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-blue-100 hover:text-blue-700 transition-colors"
                 >
                   Ngorongoro Crater
                 </button>
@@ -439,8 +439,8 @@ const Hero: React.FC = () => {
               }
             }}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide 
-                ? 'bg-orange-600 scale-125' 
+              index === currentSlide
+                ? 'bg-blue-600 scale-125'
                 : 'bg-white bg-opacity-50 hover:bg-opacity-75'
             }`}
           />

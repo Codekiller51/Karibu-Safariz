@@ -114,16 +114,16 @@ const Testimonials: React.FC = () => {
                 <div className="absolute right-0 top-1/2 h-0.5 w-6 bg-gradient-to-l from-indigo-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
               </div>
               <div className="absolute inset-2 animate-spin-fast">
-                <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-gradient-to-b from-orange-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
+                <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-gradient-to-b from-blue-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
                 <div className="absolute bottom-0 left-1/2 w-0.5 h-4 bg-gradient-to-t from-teal-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
                 <div className="absolute left-0 top-1/2 h-0.5 w-4 bg-gradient-to-r from-lime-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
                 <div className="absolute right-0 top-1/2 h-0.5 w-4 bg-gradient-to-l from-rose-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-2 h-2 bg-orange-600 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
               </div>
             </div>
-            <div className="text-orange-600 font-semibold text-lg">Loading testimonials...</div>
+            <div className="text-blue-600 font-semibold text-lg">Loading testimonials...</div>
           </div>
         </div>
       </div>
@@ -136,7 +136,7 @@ const Testimonials: React.FC = () => {
         {/* Back Button */}
         <Link
           to="/about"
-          className="inline-flex items-center space-x-2 text-gray-600 hover:text-orange-600 mb-8"
+          className="inline-flex items-center space-x-2 text-gray-600 hover:text-blue-600 mb-8"
         >
           <ArrowLeft className="h-5 w-5" />
           <span>Back to About</span>
@@ -154,7 +154,7 @@ const Testimonials: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
           {displayStats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-orange-600 mb-2">{stat.number}</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">{stat.number}</div>
               <div className="text-gray-600">{stat.label}</div>
             </div>
           ))}
@@ -181,7 +181,7 @@ const Testimonials: React.FC = () => {
                   >
                     <div className="h-full flex items-center">
                       <div className="w-full px-8 md:px-16 py-8">
-                        <Quote className="h-12 w-12 text-orange-200 mb-6" />
+                        <Quote className="h-12 w-12 text-blue-200 mb-6" />
                         <div className="flex items-center space-x-1 mb-4">
                           {[...Array(review.rating)].map((_, i) => (
                             <Star key={i} className="h-6 w-6 text-yellow-400 fill-current" />
@@ -200,7 +200,7 @@ const Testimonials: React.FC = () => {
                           <div>
                             <div className="font-semibold text-gray-900">{review.profiles?.full_name}</div>
                             <div className="text-sm text-gray-500">{review.profiles?.nationality || 'Traveler'}</div>
-                            <div className="text-sm text-orange-600">{review.tour_packages?.title}</div>
+                            <div className="text-sm text-blue-600">{review.tour_packages?.title}</div>
                           </div>
                         </div>
                       </div>
@@ -230,7 +230,7 @@ const Testimonials: React.FC = () => {
                     key={index}
                     onClick={() => setCurrentTestimonial(index)}
                     className={`w-3 h-3 rounded-full transition-colors ${
-                      index === currentTestimonial ? 'bg-orange-600' : 'bg-gray-300'
+                      index === currentTestimonial ? 'bg-blue-600' : 'bg-gray-300'
                     }`}
                   />
                 ))}
@@ -249,7 +249,7 @@ const Testimonials: React.FC = () => {
                 placeholder="Search reviews..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
             <div className="flex flex-wrap gap-2">
@@ -259,8 +259,8 @@ const Testimonials: React.FC = () => {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-md transition-colors ${
                     selectedCategory === category
-                      ? 'bg-orange-600 text-white'
-                      : 'bg-gray-100 text-gray-700 hover:bg-orange-100'
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-blue-100'
                   }`}
                 >
                   {categoryLabels[category as keyof typeof categoryLabels]}
@@ -309,7 +309,7 @@ const Testimonials: React.FC = () => {
                     </div>
                   </div>
                   
-                  <div className="text-xs text-orange-600 font-medium">{review.tour_packages?.title}</div>
+                  <div className="text-xs text-blue-600 font-medium">{review.tour_packages?.title}</div>
                   <div className="text-xs text-gray-400 mt-1">
                     {new Date(review.created_at).toLocaleDateString()}
                   </div>
@@ -326,7 +326,7 @@ const Testimonials: React.FC = () => {
                   setSearchTerm('');
                   setSelectedCategory('all');
                 }}
-                className="mt-4 text-orange-600 hover:text-orange-700"
+                className="mt-4 text-blue-600 hover:text-blue-700"
               >
                 {reviews.length === 0 ? 'Be the first to leave a review!' : 'Clear filters to see all reviews'}
               </button>
@@ -335,7 +335,7 @@ const Testimonials: React.FC = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-to-r from-orange-600 to-orange-800 rounded-2xl text-white p-8 md:p-12 text-center">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl text-white p-8 md:p-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Create Your Own Story?
           </h2>
@@ -345,13 +345,13 @@ const Testimonials: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/tours"
-              className="bg-white text-orange-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
             >
               Book Your Adventure
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-orange-600 transition-colors font-semibold"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold"
             >
               Ask Questions
             </Link>

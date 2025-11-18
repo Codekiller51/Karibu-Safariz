@@ -56,7 +56,7 @@ const BookYourTrip: React.FC = () => {
         <AnimatedSection animation="fade" className="text-center">
           <Link
             to="/tours"
-            className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
           >
             View All Trips
             <ArrowRight className="h-5 w-5" />

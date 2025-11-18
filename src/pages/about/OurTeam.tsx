@@ -114,7 +114,7 @@ const OurTeam: React.FC = () => {
         {/* Back Button */}
         <Link
           to="/about"
-          className="inline-flex items-center space-x-2 text-gray-600 hover:text-orange-600 mb-8"
+          className="inline-flex items-center space-x-2 text-gray-600 hover:text-blue-600 mb-8"
         >
           <ArrowLeft className="h-5 w-5" />
           <span>Back to About</span>
@@ -131,19 +131,19 @@ const OurTeam: React.FC = () => {
         {/* Team Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
           <div className="text-center">
-            <div className="text-4xl font-bold text-orange-600 mb-2">50+</div>
+            <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
             <div className="text-gray-600">Team Members</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-orange-600 mb-2">25+</div>
+            <div className="text-4xl font-bold text-blue-600 mb-2">25+</div>
             <div className="text-gray-600">Expert Guides</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-orange-600 mb-2">15+</div>
+            <div className="text-4xl font-bold text-blue-600 mb-2">15+</div>
             <div className="text-gray-600">Languages Spoken</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-orange-600 mb-2">100%</div>
+            <div className="text-4xl font-bold text-blue-600 mb-2">100%</div>
             <div className="text-gray-600">Local Experts</div>
           </div>
         </div>
@@ -167,7 +167,7 @@ const OurTeam: React.FC = () => {
                 />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{leader.name}</h3>
-                  <p className="text-orange-600 font-medium mb-2">{leader.role}</p>
+                  <p className="text-blue-600 font-medium mb-2">{leader.role}</p>
                   <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
                     <span>{leader.experience}</span>
                     <span>•</span>
@@ -180,7 +180,7 @@ const OurTeam: React.FC = () => {
                     <ul className="text-sm text-gray-600 space-y-1">
                       {leader.achievements.map((achievement, i) => (
                         <li key={i} className="flex items-center">
-                          <Award className="h-3 w-3 text-orange-600 mr-2" />
+                          <Award className="h-3 w-3 text-blue-600 mr-2" />
                           {achievement}
                         </li>
                       ))}
@@ -191,7 +191,7 @@ const OurTeam: React.FC = () => {
                     <h4 className="font-semibold text-gray-900 mb-2">Languages:</h4>
                     <div className="flex flex-wrap gap-2">
                       {leader.languages.map((language, i) => (
-                        <span key={i} className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">
+                        <span key={i} className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">
                           {language}
                         </span>
                       ))}
@@ -222,7 +222,7 @@ const OurTeam: React.FC = () => {
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">{guide.name}</h3>
-                  <p className="text-orange-600 font-medium text-sm mb-2">{guide.specialization}</p>
+                  <p className="text-blue-600 font-medium text-sm mb-2">{guide.specialization}</p>
                   <div className="flex items-center justify-between text-sm text-gray-500">
                     <span>{guide.experience} experience</span>
                     <span>{guide.summits}</span>
@@ -247,12 +247,12 @@ const OurTeam: React.FC = () => {
               const Icon = dept.icon;
               return (
                 <div key={index} className="bg-white rounded-lg shadow-lg p-6 text-center">
-                  <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <Icon className="h-8 w-8 text-orange-600" />
+                  <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <Icon className="h-8 w-8 text-blue-600" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{dept.name}</h3>
                   <p className="text-gray-600 text-sm mb-4">{dept.description}</p>
-                  <div className="text-2xl font-bold text-orange-600">{dept.members}</div>
+                  <div className="text-2xl font-bold text-blue-600">{dept.members}</div>
                   <div className="text-sm text-gray-500">Members</div>
                 </div>
               );
@@ -261,7 +261,7 @@ const OurTeam: React.FC = () => {
         </div>
 
         {/* Join Our Team */}
-        <div className="bg-gradient-to-r from-orange-600 to-orange-800 rounded-2xl text-white p-8 md:p-12 text-center">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl text-white p-8 md:p-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Our Team</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Are you passionate about adventure tourism and Tanzania's natural beauty? We're always looking for talented individuals to join our growing family.
@@ -269,14 +269,14 @@ const OurTeam: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="bg-white text-orange-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold inline-flex items-center justify-center space-x-2"
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold inline-flex items-center justify-center space-x-2"
             >
               <Mail className="h-5 w-5" />
               <span>Send Your CV</span>
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-orange-600 transition-colors font-semibold inline-flex items-center justify-center space-x-2"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold inline-flex items-center justify-center space-x-2"
             >
               <Phone className="h-5 w-5" />
               <span>Call Us</span>

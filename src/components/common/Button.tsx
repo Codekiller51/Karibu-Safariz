@@ -20,15 +20,15 @@ interface LinkButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> 
 const getVariantClasses = (variant: string) => {
   switch (variant) {
     case 'primary':
-      return 'bg-orange-600 text-white hover:bg-orange-700 active:bg-orange-800 shadow-md hover:shadow-lg';
+      return 'bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800 shadow-md hover:shadow-lg';
     case 'secondary':
       return 'bg-gray-200 text-gray-900 hover:bg-gray-300 active:bg-gray-400';
     case 'outline':
-      return 'border-2 border-orange-600 text-orange-600 hover:bg-orange-50 active:bg-orange-100';
+      return 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50 active:bg-blue-100';
     case 'ghost':
-      return 'text-orange-600 hover:bg-orange-50 active:bg-orange-100';
+      return 'text-blue-600 hover:bg-blue-50 active:bg-blue-100';
     default:
-      return 'bg-orange-600 text-white hover:bg-orange-700';
+      return 'bg-blue-600 text-white hover:bg-blue-700';
   }
 };
 
@@ -63,7 +63,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           inline-flex items-center justify-center gap-2 font-medium rounded-lg
           transition-all duration-300 ease-out
           disabled:opacity-50 disabled:cursor-not-allowed
-          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600
+          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600
           ${variantClasses}
           ${sizeClasses}
           ${fullWidth ? 'w-full' : ''}
@@ -101,7 +101,7 @@ const LinkButton = React.forwardRef<HTMLAnchorElement, LinkButtonProps>(
         className={`
           inline-flex items-center justify-center gap-2 font-medium rounded-lg
           transition-all duration-300 ease-out
-          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600
+          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600
           ${variantClasses}
           ${sizeClasses}
           ${fullWidth ? 'w-full' : ''}

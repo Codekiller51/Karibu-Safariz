@@ -45,7 +45,7 @@ const SpecialTripCard: React.FC<SpecialTripCardProps> = ({
       <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6">
         {subtitle && (
           <p className={`text-sm font-semibold mb-2 ${
-            theme === 'dark' ? 'text-orange-400' : 'text-orange-600'
+            theme === 'dark' ? 'text-blue-400' : 'text-blue-600'
           }`}>
             {subtitle}
           </p>

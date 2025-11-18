@@ -54,10 +54,10 @@ const FeaturedTours: React.FC = () => {
                 <div className="absolute right-0 top-1/2 h-0.5 w-4 bg-gradient-to-l from-indigo-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-1.5 h-1.5 bg-orange-600 rounded-full animate-pulse"></div>
+                <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse"></div>
               </div>
             </div>
-            <div className="text-orange-600 font-medium">Loading featured tours...</div>
+            <div className="text-blue-600 font-medium">Loading featured tours...</div>
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@ const FeaturedTours: React.FC = () => {
         <AnimatedSection animation="fade" delay={300} className="text-center">
           <Link
             to="/tours"
-            className="inline-flex items-center space-x-2 bg-orange-600 text-white px-8 py-3 rounded-lg hover:bg-orange-700 transition-all duration-300 hover:shadow-xl hover:scale-105 text-lg font-semibold"
+            className="inline-flex items-center space-x-2 bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 hover:shadow-xl hover:scale-105 text-lg font-semibold"
           >
             <span>View All Tours</span>
             <ArrowRight className="h-5 w-5" />

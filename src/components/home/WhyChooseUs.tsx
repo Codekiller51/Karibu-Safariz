@@ -49,8 +49,8 @@ const WhyChooseUs: React.FC = () => {
                 delay={index * 100}
                 className="text-center group"
               >
-                <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
-                  <Icon className="h-8 w-8 text-orange-600" />
+                <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+                  <Icon className="h-8 w-8 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
@@ -60,7 +60,7 @@ const WhyChooseUs: React.FC = () => {
         </div>
 
         <AnimatedSection animation="slide-up" delay={400} className="mt-16">
-          <div className="bg-orange-50 rounded-2xl p-8 md:p-12 overflow-hidden">
+          <div className="bg-blue-50 rounded-2xl p-8 md:p-12 overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-3xl font-bold text-gray-900 mb-4">
@@ -71,10 +71,10 @@ const WhyChooseUs: React.FC = () => {
                   Let's create memories that will last a lifetime.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-all duration-300 hover:shadow-xl hover:scale-105">
+                  <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-300 hover:shadow-xl hover:scale-105">
                     Plan Your Trip
                   </button>
-                  <button className="border-2 border-orange-600 text-orange-600 px-6 py-3 rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-300 hover:shadow-xl hover:scale-105">
+                  <button className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 hover:shadow-xl hover:scale-105">
                     Contact Us
                   </button>
                 </div>

@@ -73,10 +73,10 @@ const Testimonials: React.FC = () => {
                 <div className="absolute right-0 top-1/2 h-0.5 w-4 bg-gradient-to-l from-indigo-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-1.5 h-1.5 bg-orange-600 rounded-full animate-pulse"></div>
+                <div className="w-1.5 h-1.5 bg-blue-600 rounded-full animate-pulse"></div>
               </div>
             </div>
-            <div className="text-orange-600 font-medium">Loading testimonials...</div>
+            <div className="text-blue-600 font-medium">Loading testimonials...</div>
           </div>
         </div>
       </div>
@@ -104,7 +104,7 @@ const Testimonials: React.FC = () => {
               className="h-full"
             >
               <div className="bg-white rounded-lg shadow-lg p-6 relative h-full hover:shadow-2xl transition-shadow duration-300 card-3d">
-                <Quote className="absolute top-4 right-4 h-8 w-8 text-orange-200" />
+                <Quote className="absolute top-4 right-4 h-8 w-8 text-blue-200" />
 
                 <div className="flex items-center space-x-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -125,7 +125,7 @@ const Testimonials: React.FC = () => {
                   <div>
                     <div className="font-semibold text-gray-900">{testimonial.profiles?.full_name}</div>
                     <div className="text-sm text-gray-500">{testimonial.profiles?.nationality || 'Traveler'}</div>
-                    <div className="text-sm text-orange-600">{testimonial.tour_packages?.title}</div>
+                    <div className="text-sm text-blue-600">{testimonial.tour_packages?.title}</div>
                   </div>
                 </div>
               </div>
@@ -137,15 +137,15 @@ const Testimonials: React.FC = () => {
           <div className="bg-white rounded-lg shadow-lg p-8 max-w-4xl mx-auto hover:shadow-2xl transition-shadow duration-300">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-600 mb-2">{stats.averageRating}/5</div>
+                <div className="text-3xl font-bold text-blue-600 mb-2">{stats.averageRating}/5</div>
                 <div className="text-gray-600">Average Rating</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-600 mb-2">{stats.totalReviews}+</div>
+                <div className="text-3xl font-bold text-blue-600 mb-2">{stats.totalReviews}+</div>
                 <div className="text-gray-600">Happy Customers</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-orange-600 mb-2">{stats.recommendationRate}%</div>
+                <div className="text-3xl font-bold text-blue-600 mb-2">{stats.recommendationRate}%</div>
                 <div className="text-gray-600">Would Recommend</div>
               </div>
             </div>

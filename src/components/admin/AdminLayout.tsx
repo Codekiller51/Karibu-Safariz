@@ -70,7 +70,7 @@ const AdminLayout: React.FC = () => {
     return (
       <div className="min-h-screen bg-gray-900 flex items-center justify-center">
         <div className="text-white text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto mb-4"></div>
           <p>Verifying admin credentials...</p>
         </div>
       </div>
@@ -83,7 +83,7 @@ const AdminLayout: React.FC = () => {
       <div className="lg:hidden">
         <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-gray-900 p-4">
           <div className="flex items-center space-x-2 text-white">
-            <Shield className="h-8 w-8 text-orange-500" />
+            <Shield className="h-8 w-8 text-blue-500" />
             <span className="text-xl font-bold">Admin Panel</span>
           </div>
           <button
@@ -136,7 +136,7 @@ const AdminLayout: React.FC = () => {
       <div className="hidden lg:flex lg:flex-col lg:w-64 lg:fixed lg:inset-y-0 lg:border-r lg:border-gray-200 lg:bg-gray-900 lg:pt-5">
         <div className="flex items-center justify-between px-4">
           <div className="flex items-center space-x-2 text-white">
-            <Shield className="h-8 w-8 text-orange-500" />
+            <Shield className="h-8 w-8 text-blue-500" />
             <span className="text-xl font-bold">Admin Panel</span>
           </div>
           <button

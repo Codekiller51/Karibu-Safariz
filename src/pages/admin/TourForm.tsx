@@ -158,7 +158,7 @@ const TourForm: React.FC = () => {
   if (initialLoading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
       </div>
     );
   }
@@ -187,7 +187,7 @@ const TourForm: React.FC = () => {
               <input
                 {...register('title')}
                 type="text"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Enter tour title"
               />
               {errors.title && (
@@ -202,7 +202,7 @@ const TourForm: React.FC = () => {
               <textarea
                 {...register('short_description')}
                 rows={3}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Brief description for tour cards"
               />
               {errors.short_description && (
@@ -217,7 +217,7 @@ const TourForm: React.FC = () => {
               <textarea
                 {...register('description')}
                 rows={6}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Detailed description of the tour"
               />
               {errors.description && (
@@ -231,7 +231,7 @@ const TourForm: React.FC = () => {
               </label>
               <select
                 {...register('category')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="">Select category</option>
                 <option value="mountain-climbing">Mountain Climbing</option>
@@ -249,7 +249,7 @@ const TourForm: React.FC = () => {
               </label>
               <select
                 {...register('difficulty')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="">Select difficulty</option>
                 <option value="easy">Easy</option>
@@ -270,7 +270,7 @@ const TourForm: React.FC = () => {
                 {...register('duration', { valueAsNumber: true })}
                 type="number"
                 min="1"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Number of days"
               />
               {errors.duration && (
@@ -285,7 +285,7 @@ const TourForm: React.FC = () => {
               <input
                 {...register('best_time')}
                 type="text"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 placeholder="e.g., June - October"
               />
               {errors.best_time && (
@@ -309,7 +309,7 @@ const TourForm: React.FC = () => {
                 type="number"
                 min="1"
                 step="0.01"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Price in USD"
               />
               {errors.price_usd && (
@@ -325,7 +325,7 @@ const TourForm: React.FC = () => {
                 {...register('price_tzs', { valueAsNumber: true })}
                 type="number"
                 min="1"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Price in Tanzanian Shillings"
               />
               {errors.price_tzs && (
@@ -341,7 +341,7 @@ const TourForm: React.FC = () => {
                 {...register('min_participants', { valueAsNumber: true })}
                 type="number"
                 min="1"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Minimum number of participants"
               />
               {errors.min_participants && (
@@ -357,7 +357,7 @@ const TourForm: React.FC = () => {
                 {...register('max_participants', { valueAsNumber: true })}
                 type="number"
                 min="1"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Maximum number of participants"
               />
               {errors.max_participants && (
@@ -378,7 +378,7 @@ const TourForm: React.FC = () => {
                   <input
                     {...register(`images.${index}` as const)}
                     type="url"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Image URL"
                   />
                 </div>
@@ -396,7 +396,7 @@ const TourForm: React.FC = () => {
             <button
               type="button"
               onClick={() => appendImage('')}
-              className="flex items-center space-x-2 text-orange-600 hover:text-orange-700"
+              className="flex items-center space-x-2 text-blue-600 hover:text-blue-700"
             >
               <Plus className="h-4 w-4" />
               <span>Add Image</span>
@@ -422,7 +422,7 @@ const TourForm: React.FC = () => {
                     <input
                       {...register(`includes.${index}` as const)}
                       type="text"
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       placeholder="What's included"
                     />
                     <button
@@ -438,7 +438,7 @@ const TourForm: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => appendInclude('')}
-                  className="flex items-center space-x-2 text-orange-600 hover:text-orange-700 text-sm"
+                  className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 text-sm"
                 >
                   <Plus className="h-3 w-3" />
                   <span>Add Item</span>
@@ -455,7 +455,7 @@ const TourForm: React.FC = () => {
                     <input
                       {...register(`excludes.${index}` as const)}
                       type="text"
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       placeholder="What's not included"
                     />
                     <button
@@ -471,7 +471,7 @@ const TourForm: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => appendExclude('')}
-                  className="flex items-center space-x-2 text-orange-600 hover:text-orange-700 text-sm"
+                  className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 text-sm"
                 >
                   <Plus className="h-3 w-3" />
                   <span>Add Item</span>
@@ -488,7 +488,7 @@ const TourForm: React.FC = () => {
                     <input
                       {...register(`requirements.${index}` as const)}
                       type="text"
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                      className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       placeholder="Requirement"
                     />
                     <button
@@ -504,7 +504,7 @@ const TourForm: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => appendRequirement('')}
-                  className="flex items-center space-x-2 text-orange-600 hover:text-orange-700 text-sm"
+                  className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 text-sm"
                 >
                   <Plus className="h-3 w-3" />
                   <span>Add Requirement</span>
@@ -521,7 +521,7 @@ const TourForm: React.FC = () => {
             <button
               type="button"
               onClick={addItineraryDay}
-              className="flex items-center space-x-2 bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700"
+              className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
             >
               <Plus className="h-4 w-4" />
               <span>Add Day</span>
@@ -551,7 +551,7 @@ const TourForm: React.FC = () => {
                       type="text"
                       value={day.title}
                       onChange={(e) => updateItineraryDay(index, 'title', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       placeholder="Day title"
                     />
                   </div>
@@ -564,7 +564,7 @@ const TourForm: React.FC = () => {
                       value={day.description}
                       onChange={(e) => updateItineraryDay(index, 'description', e.target.value)}
                       rows={3}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       placeholder="Day description"
                     />
                   </div>
@@ -577,7 +577,7 @@ const TourForm: React.FC = () => {
                       type="text"
                       value={day.activities?.join(', ') || ''}
                       onChange={(e) => updateItineraryDay(index, 'activities', e.target.value.split(', ').filter(Boolean))}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       placeholder="Activities for this day"
                     />
                   </div>
@@ -590,7 +590,7 @@ const TourForm: React.FC = () => {
                       type="text"
                       value={day.accommodation || ''}
                       onChange={(e) => updateItineraryDay(index, 'accommodation', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       placeholder="Accommodation for this day"
                     />
                   </div>
@@ -609,7 +609,7 @@ const TourForm: React.FC = () => {
               <input
                 {...register('featured')}
                 type="checkbox"
-                className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
               />
               <label className="ml-2 block text-sm text-gray-900">
                 Featured Tour (appears on homepage)
@@ -620,7 +620,7 @@ const TourForm: React.FC = () => {
               <input
                 {...register('active')}
                 type="checkbox"
-                className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
               />
               <label className="ml-2 block text-sm text-gray-900">
                 Active (visible to public)
@@ -641,7 +641,7 @@ const TourForm: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="px-6 py-3 bg-orange-600 text-white rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+            className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
           >
             {loading ? (
               <>

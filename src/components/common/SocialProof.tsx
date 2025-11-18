@@ -43,7 +43,7 @@ const SocialProof: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-orange-600 mb-1">
+              <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1">
                 {stat.number}
               </div>
               <div className="text-xs md:text-sm text-gray-600">

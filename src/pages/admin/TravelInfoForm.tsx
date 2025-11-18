@@ -133,7 +133,7 @@ const TravelInfoForm: React.FC = () => {
   if (initialLoading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
       </div>
     );
   }
@@ -208,7 +208,7 @@ const TravelInfoForm: React.FC = () => {
               <input
                 {...register('title')}
                 type="text"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Enter travel guide title"
               />
               {errors.title && (
@@ -228,7 +228,7 @@ const TravelInfoForm: React.FC = () => {
               <textarea
                 {...register('excerpt')}
                 rows={3}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Brief description of the travel guide"
               />
               {errors.excerpt && (
@@ -243,7 +243,7 @@ const TravelInfoForm: React.FC = () => {
               <input
                 {...register('featured_image')}
                 type="url"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 placeholder="https://example.com/image.jpg"
               />
               {errors.featured_image && (
@@ -266,7 +266,7 @@ const TravelInfoForm: React.FC = () => {
               </label>
               <select
                 {...register('category')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="">Select category</option>
                 {categories.map(category => (
@@ -291,7 +291,7 @@ const TravelInfoForm: React.FC = () => {
             <textarea
               {...register('content')}
               rows={20}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500 font-mono text-sm"
+              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 font-mono text-sm"
               placeholder="Write your travel guide content here. You can use markdown formatting."
             />
             {errors.content && (
@@ -317,7 +317,7 @@ const TravelInfoForm: React.FC = () => {
                   <input
                     {...register(`quick_facts.${index}.label` as const)}
                     type="text"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Fact label"
                   />
                 </div>
@@ -328,7 +328,7 @@ const TravelInfoForm: React.FC = () => {
                   <input
                     {...register(`quick_facts.${index}.value` as const)}
                     type="text"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Fact value"
                   />
                 </div>
@@ -339,7 +339,7 @@ const TravelInfoForm: React.FC = () => {
                   <input
                     {...register(`quick_facts.${index}.icon` as const)}
                     type="text"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="🌍"
                   />
                 </div>
@@ -357,7 +357,7 @@ const TravelInfoForm: React.FC = () => {
             <button
               type="button"
               onClick={() => appendQuickFact({ label: '', value: '', icon: '' })}
-              className="flex items-center space-x-2 text-orange-600 hover:text-orange-700"
+              className="flex items-center space-x-2 text-blue-600 hover:text-blue-700"
             >
               <Plus className="h-4 w-4" />
               <span>Add Quick Fact</span>
@@ -376,7 +376,7 @@ const TravelInfoForm: React.FC = () => {
                   <input
                     {...register(`checklist_items.${index}` as const)}
                     type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Checklist item"
                   />
                 </div>
@@ -394,7 +394,7 @@ const TravelInfoForm: React.FC = () => {
             <button
               type="button"
               onClick={() => appendChecklistItem('')}
-              className="flex items-center space-x-2 text-orange-600 hover:text-orange-700"
+              className="flex items-center space-x-2 text-blue-600 hover:text-blue-700"
             >
               <Plus className="h-4 w-4" />
               <span>Add Checklist Item</span>
@@ -413,7 +413,7 @@ const TravelInfoForm: React.FC = () => {
                   <input
                     {...register(`tags.${index}` as const)}
                     type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Tag"
                   />
                 </div>
@@ -431,7 +431,7 @@ const TravelInfoForm: React.FC = () => {
             <button
               type="button"
               onClick={() => appendTag('')}
-              className="flex items-center space-x-2 text-orange-600 hover:text-orange-700"
+              className="flex items-center space-x-2 text-blue-600 hover:text-blue-700"
             >
               <Plus className="h-4 w-4" />
               <span>Add Tag</span>
@@ -448,7 +448,7 @@ const TravelInfoForm: React.FC = () => {
               <input
                 {...register('featured')}
                 type="checkbox"
-                className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
               />
               <label className="ml-2 block text-sm text-gray-900">
                 Featured Guide (appears prominently)
@@ -459,7 +459,7 @@ const TravelInfoForm: React.FC = () => {
               <input
                 {...register('active')}
                 type="checkbox"
-                className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
               />
               <label className="ml-2 block text-sm text-gray-900">
                 Active (visible to public)
@@ -480,7 +480,7 @@ const TravelInfoForm: React.FC = () => {
           <button
             type="submit"
             disabled={loading}
-            className="px-6 py-3 bg-orange-600 text-white rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+            className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
           >
             {loading ? (
               <>

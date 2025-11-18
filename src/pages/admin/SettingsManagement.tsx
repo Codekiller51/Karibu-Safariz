@@ -48,7 +48,7 @@ const SettingsManagement: React.FC = () => {
         {/* Site Information */}
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center mb-6">
-            <Settings className="h-5 w-5 text-orange-600 mr-2" />
+            <Settings className="h-5 w-5 text-blue-600 mr-2" />
             <h2 className="text-lg font-semibold text-gray-900">Site Information</h2>
           </div>
 
@@ -60,7 +60,7 @@ const SettingsManagement: React.FC = () => {
                 name="site_name"
                 value={settings.site_name}
                 onChange={handleInputChange}
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -72,7 +72,7 @@ const SettingsManagement: React.FC = () => {
                   name="site_email"
                   value={settings.site_email}
                   onChange={handleInputChange}
-                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
               <div>
@@ -82,7 +82,7 @@ const SettingsManagement: React.FC = () => {
                   name="support_email"
                   value={settings.support_email}
                   onChange={handleInputChange}
-                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                  className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
             </div>
@@ -94,7 +94,7 @@ const SettingsManagement: React.FC = () => {
                 name="site_phone"
                 value={settings.site_phone}
                 onChange={handleInputChange}
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
           </div>
@@ -112,7 +112,7 @@ const SettingsManagement: React.FC = () => {
                   name="allow_bookings"
                   checked={settings.allow_bookings}
                   onChange={handleInputChange}
-                  className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                 />
                 <span className="ml-2 text-sm text-gray-700">Allow New Bookings</span>
               </label>
@@ -127,7 +127,7 @@ const SettingsManagement: React.FC = () => {
                 value={settings.max_booking_advance_days}
                 onChange={handleInputChange}
                 min="1"
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
               <p className="mt-1 text-xs text-gray-500">How many days in advance customers can book tours</p>
             </div>
@@ -140,7 +140,7 @@ const SettingsManagement: React.FC = () => {
                 value={settings.cancellation_deadline_days}
                 onChange={handleInputChange}
                 min="0"
-                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
               <p className="mt-1 text-xs text-gray-500">How many days before tour start date cancellations are allowed</p>
             </div>
@@ -159,7 +159,7 @@ const SettingsManagement: React.FC = () => {
                   name="maintenance_mode"
                   checked={settings.maintenance_mode}
                   onChange={handleInputChange}
-                  className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                 />
                 <span className="ml-2 text-sm text-gray-700">Maintenance Mode</span>
               </label>
@@ -179,7 +179,7 @@ const SettingsManagement: React.FC = () => {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="inline-flex items-center px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white rounded-lg text-sm font-medium"
+            className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium"
           >
             <Save className="h-4 w-4 mr-2" />
             Save Settings

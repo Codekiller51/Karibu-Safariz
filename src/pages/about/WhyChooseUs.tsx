@@ -138,7 +138,7 @@ const WhyChooseUs: React.FC = () => {
         {/* Back Button */}
         <Link
           to="/about"
-          className="inline-flex items-center space-x-2 text-gray-600 hover:text-orange-600 mb-8"
+          className="inline-flex items-center space-x-2 text-gray-600 hover:text-blue-600 mb-8"
         >
           <ArrowLeft className="h-5 w-5" />
           <span>Back to About</span>
@@ -166,8 +166,8 @@ const WhyChooseUs: React.FC = () => {
               const Icon = advantage.icon;
               return (
                 <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-                  <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                    <Icon className="h-8 w-8 text-orange-600" />
+                  <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                    <Icon className="h-8 w-8 text-blue-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{advantage.title}</h3>
                   <p className="text-gray-600 mb-4">{advantage.description}</p>
@@ -197,7 +197,7 @@ const WhyChooseUs: React.FC = () => {
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-orange-600 text-white">
+                <thead className="bg-blue-600 text-white">
                   <tr>
                     <th className="px-6 py-4 text-left font-semibold">Feature</th>
                     <th className="px-6 py-4 text-left font-semibold">Karibu Safariz</th>
@@ -238,7 +238,7 @@ const WhyChooseUs: React.FC = () => {
                 <p className="text-gray-600 italic mb-4">"{testimonial.quote}"</p>
                 <div>
                   <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                  <div className="text-sm text-orange-600">{testimonial.tour}</div>
+                  <div className="text-sm text-blue-600">{testimonial.tour}</div>
                 </div>
               </div>
             ))}
@@ -268,7 +268,7 @@ const WhyChooseUs: React.FC = () => {
 
         {/* Statistics */}
         <div className="mb-16">
-          <div className="bg-orange-50 rounded-2xl p-8 md:p-12">
+          <div className="bg-blue-50 rounded-2xl p-8 md:p-12">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Track Record</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -278,19 +278,19 @@ const WhyChooseUs: React.FC = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-orange-600 mb-2">5000+</div>
+                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">5000+</div>
                 <div className="text-gray-600">Happy Travelers</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-orange-600 mb-2">98%</div>
+                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">98%</div>
                 <div className="text-gray-600">Success Rate</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-orange-600 mb-2">15+</div>
+                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">15+</div>
                 <div className="text-gray-600">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-orange-600 mb-2">4.9/5</div>
+                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">4.9/5</div>
                 <div className="text-gray-600">Average Rating</div>
               </div>
             </div>
@@ -298,7 +298,7 @@ const WhyChooseUs: React.FC = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-to-r from-orange-600 to-orange-800 rounded-2xl text-white p-8 md:p-12 text-center">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl text-white p-8 md:p-12 text-center">
           <Mountain className="h-16 w-16 mx-auto mb-6 text-white" />
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Experience the Karibu Tours & Safariz Difference
@@ -309,13 +309,13 @@ const WhyChooseUs: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/tours"
-              className="bg-white text-orange-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
             >
               Explore Our Tours
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-orange-600 transition-colors font-semibold"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold"
             >
               Get Custom Quote
             </Link>

@@ -187,13 +187,13 @@ const Header: React.FC = () => {
               </div>
             </div>
             <div className="flex items-center space-x-4">
-              <a href="#" className="hover:text-orange-400 transition-colors">
+              <a href="#" className="hover:text-blue-400 transition-colors">
                 <Facebook className="h-4 w-4" />
               </a>
-              <a href="#" className="hover:text-orange-400 transition-colors">
+              <a href="#" className="hover:text-blue-400 transition-colors">
                 <Instagram className="h-4 w-4" />
               </a>
-              <a href="#" className="hover:text-orange-400 transition-colors">
+              <a href="#" className="hover:text-blue-400 transition-colors">
                 <Twitter className="h-4 w-4" />
               </a>
             </div>
@@ -231,10 +231,10 @@ const Header: React.FC = () => {
                         to={item.href}
                         className={`flex items-center space-x-1 py-2 transition-colors duration-200 ${
                           location.pathname.startsWith(item.href) && item.href !== '/'
-                            ? 'text-orange-600 font-semibold border-b-2 border-orange-600'
+                            ? 'text-blue-600 font-semibold border-b-2 border-blue-600'
                             : location.pathname === item.href && item.href === '/'
-                            ? 'text-orange-600 font-semibold border-b-2 border-orange-600'
-                            : 'text-gray-700 hover:text-orange-600'
+                            ? 'text-blue-600 font-semibold border-b-2 border-blue-600'
+                            : 'text-gray-700 hover:text-blue-600'
                         }`}
                       >
                         <span>{item.name}</span>
@@ -247,7 +247,7 @@ const Header: React.FC = () => {
                           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
                             {item.megaMenu.map((section, index) => (
                               <div key={index}>
-                                <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wide border-b border-orange-200 pb-2">
+                                <h3 className="font-bold text-gray-900 mb-4 text-sm uppercase tracking-wide border-b border-blue-200 pb-2">
                                   {section.category}
                                 </h3>
                                 <div className="space-y-2">
@@ -255,7 +255,7 @@ const Header: React.FC = () => {
                                     <Link
                                       key={subIndex}
                                       to={subItem.href}
-                                      className="block px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-md transition-colors"
+                                      className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors"
                                     >
                                       {subItem.name}
                                     </Link>
@@ -274,7 +274,7 @@ const Header: React.FC = () => {
                               </div>
                               <Link
                                 to="/contact"
-                                className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700 transition-colors text-sm font-medium"
+                                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors text-sm font-medium"
                               >
                                 Contact Us
                               </Link>
@@ -291,7 +291,7 @@ const Header: React.FC = () => {
                               <Link
                                 key={index}
                                 to={subItem.href}
-                                className="block px-3 py-2 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-md transition-colors"
+                                className="block px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors"
                               >
                                 {subItem.name}
                               </Link>
@@ -305,8 +305,8 @@ const Header: React.FC = () => {
                       to={item.href}
                       className={`py-2 transition-colors duration-200 ${
                         location.pathname === item.href
-                          ? 'text-orange-600 font-semibold border-b-2 border-orange-600'
-                          : 'text-gray-700 hover:text-orange-600'
+                          ? 'text-blue-600 font-semibold border-b-2 border-blue-600'
+                          : 'text-gray-700 hover:text-blue-600'
                       }`}
                     >
                       {item.name}
@@ -320,16 +320,16 @@ const Header: React.FC = () => {
             <div className="hidden lg:flex items-center space-x-4">
               {user ? (
                 <div className="flex items-center space-x-4">
-                  <Link 
-                    to="/profile" 
-                    className="flex items-center space-x-2 text-gray-700 hover:text-orange-600"
+                  <Link
+                    to="/profile"
+                    className="flex items-center space-x-2 text-gray-700 hover:text-blue-600"
                   >
                     <User className="h-5 w-5" />
                     <span>Profile</span>
                   </Link>
                   <button
                     onClick={handleSignOut}
-                    className="flex items-center space-x-2 text-gray-700 hover:text-orange-600"
+                    className="flex items-center space-x-2 text-gray-700 hover:text-blue-600"
                   >
                     <LogOut className="h-5 w-5" />
                     <span>Sign Out</span>
@@ -337,15 +337,15 @@ const Header: React.FC = () => {
                 </div>
               ) : (
                 <div className="flex items-center space-x-4">
-                  <Link 
-                    to="/login" 
-                    className="text-gray-700 hover:text-orange-600"
+                  <Link
+                    to="/login"
+                    className="text-gray-700 hover:text-blue-600"
                   >
                     Sign In
                   </Link>
-                  <Link 
-                    to="/register" 
-                    className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700 transition-colors"
+                  <Link
+                    to="/register"
+                    className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
                   >
                     Book your trip
                   </Link>
@@ -377,8 +377,8 @@ const Header: React.FC = () => {
                         to={item.href}
                         className={`flex-1 block px-3 py-2 text-base font-medium ${
                           location.pathname === item.href
-                            ? 'text-orange-600 bg-orange-50'
-                            : 'text-gray-700 hover:text-orange-600 hover:bg-orange-50'
+                            ? 'text-blue-600 bg-blue-50'
+                            : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                         }`}
                         onClick={() => {
                           if (!item.megaMenu && !item.dropdown) {
@@ -393,7 +393,7 @@ const Header: React.FC = () => {
                       {(item.megaMenu || item.dropdown) && (
                         <button
                           onClick={() => toggleMobileSubmenu(item.name)}
-                          className="px-3 py-2 text-gray-500 hover:text-orange-600"
+                          className="px-3 py-2 text-gray-500 hover:text-blue-600"
                         >
                           <ChevronRight className={`h-5 w-5 transition-transform ${
                             expandedMobile === item.name ? 'rotate-90' : ''
@@ -414,7 +414,7 @@ const Header: React.FC = () => {
                               <Link
                                 key={subIndex}
                                 to={subItem.href}
-                                className="block px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-orange-50"
+                                className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50"
                                 onClick={() => setIsMenuOpen(false)}
                               >
                                 {subItem.name}
@@ -427,7 +427,7 @@ const Header: React.FC = () => {
                           <Link
                             key={index}
                             to={subItem.href}
-                            className="block px-3 py-2 text-sm text-gray-600 hover:text-orange-600 hover:bg-orange-50"
+                            className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-blue-50"
                             onClick={() => setIsMenuOpen(false)}
                           >
                             {subItem.name}
@@ -443,7 +443,7 @@ const Header: React.FC = () => {
                     <>
                       <Link
                         to="/profile"
-                        className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                        className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Profile
@@ -453,7 +453,7 @@ const Header: React.FC = () => {
                           handleSignOut();
                           setIsMenuOpen(false);
                         }}
-                        className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                        className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
                       >
                         Sign Out
                       </button>
@@ -462,14 +462,14 @@ const Header: React.FC = () => {
                     <>
                       <Link
                         to="/login"
-                        className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                        className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Sign In
                       </Link>
                       <Link
                         to="/register"
-                        className="block px-3 py-2 text-base font-medium text-white bg-orange-600 hover:bg-orange-700"
+                        className="block px-3 py-2 text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
                         onClick={() => setIsMenuOpen(false)}
                       >
                         Book your trip

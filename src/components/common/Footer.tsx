@@ -28,13 +28,13 @@ const Footer: React.FC = () => {
               Experience the magic of Mount Kilimanjaro, safari wildlife, and cultural immersion.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-orange-600 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-600 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-600 transition-colors">
+              <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
             </div>
@@ -45,32 +45,32 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-orange-600 transition-colors">
+                <Link to="/" className="text-gray-400 hover:text-blue-600 transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/tours/mountain-climbing" className="text-gray-400 hover:text-orange-600 transition-colors">
+                <Link to="/tours/mountain-climbing" className="text-gray-400 hover:text-blue-600 transition-colors">
                   Mountain Climbing
                 </Link>
               </li>
               <li>
-                <Link to="/tours/safari" className="text-gray-400 hover:text-orange-600 transition-colors">
+                <Link to="/tours/safari" className="text-gray-400 hover:text-blue-600 transition-colors">
                   Safari Tours
                 </Link>
               </li>
               <li>
-                <Link to="/tours/day-trips" className="text-gray-400 hover:text-orange-600 transition-colors">
+                <Link to="/tours/day-trips" className="text-gray-400 hover:text-blue-600 transition-colors">
                   Day Trips
                 </Link>
               </li>
               <li>
-                <Link to="/gallery" className="text-gray-400 hover:text-orange-600 transition-colors">
+                <Link to="/gallery" className="text-gray-400 hover:text-blue-600 transition-colors">
                   Gallery
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-gray-400 hover:text-orange-600 transition-colors">
+                <Link to="/blog" className="text-gray-400 hover:text-blue-600 transition-colors">
                   Blog
                 </Link>
               </li>
@@ -95,15 +95,15 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-orange-600" />
+                <MapPin className="h-5 w-5 text-blue-600" />
                 <span className="text-gray-400">Moshi, Tanzania</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-orange-600" />
+                <Phone className="h-5 w-5 text-blue-600" />
                 <span className="text-gray-400">+255 123 456 789</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-orange-600" />
+                <Mail className="h-5 w-5 text-blue-600" />
                 <span className="text-gray-400">info@kaributz.com</span>
               </div>
             </div>
@@ -115,10 +115,10 @@ const Footer: React.FC = () => {
             © 2024 Karibu Tours & Safariz. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="text-gray-400 hover:text-orange-600 text-sm transition-colors">
+            <Link to="/privacy" className="text-gray-400 hover:text-blue-600 text-sm transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-gray-400 hover:text-orange-600 text-sm transition-colors">
+            <Link to="/terms" className="text-gray-400 hover:text-blue-600 text-sm transition-colors">
               Terms of Service
             </Link>
           </div>

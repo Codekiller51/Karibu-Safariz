@@ -140,7 +140,7 @@ const Dashboard: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
       </div>
     );
   }
@@ -177,7 +177,7 @@ const Dashboard: React.FC = () => {
   ];
 
   const alertCards = [
-    { name: 'Pending Bookings', value: stats.pendingBookings, icon: Calendar, href: '/admin/bookings', color: 'bg-orange-500' },
+    { name: 'Pending Bookings', value: stats.pendingBookings, icon: Calendar, href: '/admin/bookings', color: 'bg-blue-500' },
     { name: 'Pending Reviews', value: stats.pendingReviews, icon: Star, href: '/admin/reviews', color: 'bg-yellow-600' },
     { name: 'New Inquiries', value: stats.newInquiries, icon: MessageSquare, href: '/admin/inquiries', color: 'bg-red-500' },
   ];
@@ -194,7 +194,7 @@ const Dashboard: React.FC = () => {
           </div>
           <button
             onClick={() => fetchDashboardData()}
-            className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -249,7 +249,7 @@ const Dashboard: React.FC = () => {
               </div>
               <div className="bg-gray-50 px-5 py-3">
                 <div className="text-sm">
-                  <div className="font-medium text-orange-600 hover:text-orange-500">
+                  <div className="font-medium text-blue-600 hover:text-blue-500">
                     View all
                   </div>
                 </div>
@@ -288,7 +288,7 @@ const Dashboard: React.FC = () => {
                 </div>
                 <div className="bg-gray-50 px-5 py-3">
                   <div className="text-sm">
-                    <div className="font-medium text-orange-600 hover:text-orange-500">
+                    <div className="font-medium text-blue-600 hover:text-blue-500">
                       Take action
                     </div>
                   </div>
@@ -305,7 +305,7 @@ const Dashboard: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           <Link
             to="/admin/tours/new"
-            className="bg-orange-600 hover:bg-orange-700 text-white rounded-lg p-4 text-center"
+            className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg p-4 text-center"
           >
             Add New Tour
           </Link>

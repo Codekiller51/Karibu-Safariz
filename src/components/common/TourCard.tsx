@@ -32,7 +32,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, featured = false }) => {
   const difficultyColors = {
     easy: 'bg-green-100 text-green-800',
     moderate: 'bg-yellow-100 text-yellow-800',
-    challenging: 'bg-orange-100 text-orange-800',
+    challenging: 'bg-blue-100 text-blue-800',
     extreme: 'bg-red-100 text-red-800',
   };
 
@@ -54,7 +54,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, featured = false }) => {
           parallaxSpeed={0.1}
         />
         <div className="absolute top-4 left-4 z-10">
-          <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-md backdrop-blur-sm">
+          <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-md backdrop-blur-sm">
             {categoryLabels[tour.category]}
           </span>
         </div>
@@ -67,7 +67,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, featured = false }) => {
       </div>
 
       <div className="p-6 flex-1 flex flex-col">
-        <h3 className="text-xl font-bold text-gray-900 mb-2 hover:text-orange-600 transition-colors duration-300">{tour.title}</h3>
+        <h3 className="text-xl font-bold text-gray-900 mb-2 hover:text-blue-600 transition-colors duration-300">{tour.title}</h3>
         <p className="text-gray-600 mb-4 line-clamp-3">{tour.short_description}</p>
 
         <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
@@ -88,7 +88,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, featured = false }) => {
 
         <div className="flex items-center justify-between mt-auto">
           <div>
-            <span className="text-2xl font-bold text-orange-600">${tour.price_usd}</span>
+            <span className="text-2xl font-bold text-blue-600">${tour.price_usd}</span>
             <span className="text-gray-500 ml-1">per person</span>
           </div>
           <Link

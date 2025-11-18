@@ -155,7 +155,7 @@ const Certifications: React.FC = () => {
         {/* Back Button */}
         <Link
           to="/about"
-          className="inline-flex items-center space-x-2 text-gray-600 hover:text-orange-600 mb-8"
+          className="inline-flex items-center space-x-2 text-gray-600 hover:text-blue-600 mb-8"
         >
           <ArrowLeft className="h-5 w-5" />
           <span>Back to About</span>
@@ -172,19 +172,19 @@ const Certifications: React.FC = () => {
         {/* Summary Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
           <div className="text-center">
-            <div className="text-4xl font-bold text-orange-600 mb-2">{certifications.length}</div>
+            <div className="text-4xl font-bold text-blue-600 mb-2">{certifications.length}</div>
             <div className="text-gray-600">Active Certifications</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-orange-600 mb-2">{awards.length}</div>
+            <div className="text-4xl font-bold text-blue-600 mb-2">{awards.length}</div>
             <div className="text-gray-600">Industry Awards</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-orange-600 mb-2">15+</div>
+            <div className="text-4xl font-bold text-blue-600 mb-2">15+</div>
             <div className="text-gray-600">Years Compliance</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-orange-600 mb-2">100%</div>
+            <div className="text-4xl font-bold text-blue-600 mb-2">100%</div>
             <div className="text-gray-600">Compliance Rate</div>
           </div>
         </div>
@@ -197,8 +197,8 @@ const Certifications: React.FC = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-3 rounded-lg transition-colors ${
                 selectedCategory === category
-                  ? 'bg-orange-600 text-white'
-                  : 'bg-white text-gray-700 hover:bg-orange-50 border border-gray-300'
+                  ? 'bg-blue-600 text-white'
+                  : 'bg-white text-gray-700 hover:bg-blue-50 border border-gray-300'
               }`}
             >
               {category}
@@ -258,11 +258,11 @@ const Certifications: React.FC = () => {
                   </div>
                   
                   <div className="flex space-x-2">
-                    <button className="flex-1 bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700 transition-colors text-sm flex items-center justify-center space-x-2">
+                    <button className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors text-sm flex items-center justify-center space-x-2">
                       <Download className="h-4 w-4" />
                       <span>Download</span>
                     </button>
-                    <button className="flex-1 border border-orange-600 text-orange-600 px-4 py-2 rounded-md hover:bg-orange-50 transition-colors text-sm flex items-center justify-center space-x-2">
+                    <button className="flex-1 border border-blue-600 text-blue-600 px-4 py-2 rounded-md hover:bg-blue-50 transition-colors text-sm flex items-center justify-center space-x-2">
                       <ExternalLink className="h-4 w-4" />
                       <span>Verify</span>
                     </button>
@@ -285,12 +285,12 @@ const Certifications: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {awards.map((award, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6 flex items-center space-x-4">
-                <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
-                  <Award className="h-8 w-8 text-orange-600" />
+                <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center flex-shrink-0">
+                  <Award className="h-8 w-8 text-blue-600" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-bold text-gray-900 mb-1">{award.title}</h3>
-                  <p className="text-orange-600 font-medium text-sm mb-2">{award.issuer} • {award.year}</p>
+                  <p className="text-blue-600 font-medium text-sm mb-2">{award.issuer} • {award.year}</p>
                   <p className="text-gray-600 text-sm">{award.description}</p>
                 </div>
               </div>
@@ -301,7 +301,7 @@ const Certifications: React.FC = () => {
         {/* Compliance Statement */}
         <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 mb-16">
           <div className="text-center mb-8">
-            <Shield className="h-16 w-16 text-orange-600 mx-auto mb-4" />
+            <Shield className="h-16 w-16 text-blue-600 mx-auto mb-4" />
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Commitment to Compliance</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We maintain rigorous standards and regularly update our certifications to ensure the highest level of service and safety for our guests.
@@ -328,7 +328,7 @@ const Certifications: React.FC = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-to-r from-orange-600 to-orange-800 rounded-2xl text-white p-8 md:p-12 text-center">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl text-white p-8 md:p-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Trust in Our Expertise
           </h2>
@@ -338,13 +338,13 @@ const Certifications: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/tours"
-              className="bg-white text-orange-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
             >
               Book Your Adventure
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-orange-600 transition-colors font-semibold"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold"
             >
               Ask About Our Standards
             </Link>

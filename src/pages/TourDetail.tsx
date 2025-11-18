@@ -126,16 +126,16 @@ const TourDetail: React.FC = () => {
                 <div className="absolute right-0 top-1/2 h-0.5 w-6 bg-gradient-to-l from-indigo-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
               </div>
               <div className="absolute inset-2 animate-spin-fast">
-                <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-gradient-to-b from-orange-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
+                <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-gradient-to-b from-blue-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
                 <div className="absolute bottom-0 left-1/2 w-0.5 h-4 bg-gradient-to-t from-teal-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
                 <div className="absolute left-0 top-1/2 h-0.5 w-4 bg-gradient-to-r from-lime-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
                 <div className="absolute right-0 top-1/2 h-0.5 w-4 bg-gradient-to-l from-rose-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-2 h-2 bg-orange-600 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
               </div>
             </div>
-            <div className="text-orange-600 font-semibold text-lg">Loading tour details...</div>
+            <div className="text-blue-600 font-semibold text-lg">Loading tour details...</div>
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@ const TourDetail: React.FC = () => {
   const difficultyColors = {
     easy: 'bg-green-100 text-green-800',
     moderate: 'bg-yellow-100 text-yellow-800',
-    challenging: 'bg-orange-100 text-orange-800',
+    challenging: 'bg-blue-100 text-blue-800',
     extreme: 'bg-red-100 text-red-800',
   };
 
@@ -171,7 +171,7 @@ const TourDetail: React.FC = () => {
         {/* Back Button */}
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center space-x-2 text-gray-600 hover:text-orange-600 mb-6"
+          className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 mb-6"
         >
           <ArrowLeft className="h-5 w-5" />
           <span>Back to Tours</span>
@@ -201,7 +201,7 @@ const TourDetail: React.FC = () => {
                       key={index}
                       onClick={() => setSelectedImage(index)}
                       className={`w-20 h-20 rounded-lg overflow-hidden border-2 ${
-                        selectedImage === index ? 'border-orange-600' : 'border-gray-300'
+                        selectedImage === index ? 'border-blue-600' : 'border-gray-300'
                       }`}
                     >
                       <img src={image} alt={`${tour.title} ${index + 1}`} className="w-full h-full object-cover" />
@@ -317,7 +317,7 @@ const TourDetail: React.FC = () => {
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {tour.requirements.map((requirement, index) => (
                     <li key={index} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
                       <span className="text-gray-600">{requirement}</span>
                     </li>
                   ))}
@@ -325,7 +325,7 @@ const TourDetail: React.FC = () => {
               </div>
 
               {/* Best Time */}
-              <div className="bg-orange-50 rounded-lg p-6">
+              <div className="bg-blue-50 rounded-lg p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Best Time to Visit</h3>
                 <p className="text-gray-600">{tour.best_time}</p>
               </div>
@@ -342,14 +342,14 @@ const TourDetail: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="bg-white rounded-lg shadow-lg p-6 sticky top-24">
               <div className="text-center mb-6">
-                <div className="text-3xl font-bold text-orange-600">${tour.price_usd}</div>
+                <div className="text-3xl font-bold text-blue-600">${tour.price_usd}</div>
                 <div className="text-gray-500">per person</div>
                 <div className="text-sm text-gray-400">TZS {tour.price_tzs.toLocaleString()}</div>
               </div>
 
               <button
                 onClick={handleBookNow}
-                className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold text-lg mb-4"
+                className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg mb-4"
               >
                 Book Now
               </button>
@@ -374,7 +374,7 @@ const TourDetail: React.FC = () => {
                 <p className="text-sm text-gray-600 mb-3">
                   Contact our travel experts for personalized assistance.
                 </p>
-                <button className="w-full border border-orange-600 text-orange-600 py-2 rounded-lg hover:bg-orange-50 transition-colors">
+                <button className="w-full border border-blue-600 text-blue-600 py-2 rounded-lg hover:bg-blue-50 transition-colors">
                   Contact Us
                 </button>
               </div>

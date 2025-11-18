@@ -49,7 +49,7 @@ const Breadcrumbs: React.FC = () => {
           <li>
             <Link
               to="/"
-              className="inline-flex items-center gap-2 text-gray-700 hover:text-orange-600 transition-colors"
+              className="inline-flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors"
             >
               <Home className="h-4 w-4" />
               <span className="text-sm font-medium">Home</span>
@@ -66,7 +66,7 @@ const Breadcrumbs: React.FC = () => {
               ) : (
                 <Link
                   to={crumb.path}
-                  className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors"
+                  className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
                 >
                   {crumb.label}
                 </Link>

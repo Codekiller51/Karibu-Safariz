@@ -75,7 +75,7 @@ const About: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-orange-600 to-orange-800 text-white py-20">
+      <div className="relative bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">About Karibu Safariz</h1>
@@ -90,7 +90,7 @@ const About: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-orange-600 mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">
                 {stat.number}
               </div>
               <div className="text-gray-600 font-medium">{stat.label}</div>
@@ -112,8 +112,8 @@ const About: React.FC = () => {
               const Icon = value.icon;
               return (
                 <div key={index} className="text-center">
-                  <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <Icon className="h-8 w-8 text-orange-600" />
+                  <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <Icon className="h-8 w-8 text-blue-600" />
                   </div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{value.title}</h3>
                   <p className="text-gray-600 text-sm">{value.description}</p>
@@ -144,13 +144,13 @@ const About: React.FC = () => {
                   className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group"
                 >
                   <div className="flex items-center mb-4">
-                    <div className="bg-orange-100 rounded-lg p-3 mr-4 group-hover:bg-orange-200 transition-colors">
-                      <Icon className="h-6 w-6 text-orange-600" />
+                    <div className="bg-blue-100 rounded-lg p-3 mr-4 group-hover:bg-blue-200 transition-colors">
+                      <Icon className="h-6 w-6 text-blue-600" />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
                   </div>
                   <p className="text-gray-600 mb-4">{item.description}</p>
-                  <div className="flex items-center text-orange-600 font-medium group-hover:text-orange-700">
+                  <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-700">
                     <span>Learn More</span>
                     <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </div>
@@ -161,7 +161,7 @@ const About: React.FC = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-to-r from-orange-600 to-orange-800 rounded-2xl text-white p-8 md:p-12 text-center">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl text-white p-8 md:p-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Start Your Adventure?
           </h2>
@@ -171,13 +171,13 @@ const About: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/tours"
-              className="bg-white text-orange-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
             >
               Explore Tours
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-orange-600 transition-colors font-semibold"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold"
             >
               Contact Us
             </Link>

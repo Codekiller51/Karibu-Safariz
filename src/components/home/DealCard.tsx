@@ -38,12 +38,12 @@ const DealCard: React.FC<DealCardProps> = ({
           alt={title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        <div className="absolute top-3 right-3 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+        <div className="absolute top-3 right-3 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
           Save {discount}%
         </div>
       </div>
       <div className="p-4">
-        <h3 className="font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-orange-600 transition-colors">
+        <h3 className="font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
           {title}
         </h3>
         <div className="flex items-center text-gray-600 text-sm mb-3">

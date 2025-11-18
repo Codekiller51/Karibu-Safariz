@@ -45,12 +45,12 @@ const NewsletterSignup: React.FC = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
-              className="flex-1 px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-300 text-gray-900"
+              className="flex-1 px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300 text-gray-900"
             />
             <button
               type="submit"
               disabled={isLoading}
-              className="btn-base btn-outline px-4 py-2.5 bg-white text-orange-600 border-0 hover:bg-orange-50"
+              className="btn-base btn-outline px-4 py-2.5 bg-white text-blue-600 border-0 hover:bg-blue-50"
             >
               <Send className="h-4 w-4" />
             </button>

@@ -75,8 +75,8 @@ const Contact: React.FC = () => {
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-orange-100 rounded-lg p-3">
-                    <MapPin className="h-6 w-6 text-orange-600" />
+                  <div className="bg-blue-100 rounded-lg p-3">
+                    <MapPin className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Our Location</h3>
@@ -88,8 +88,8 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-orange-100 rounded-lg p-3">
-                    <Phone className="h-6 w-6 text-orange-600" />
+                  <div className="bg-blue-100 rounded-lg p-3">
+                    <Phone className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Phone</h3>
@@ -101,8 +101,8 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-orange-100 rounded-lg p-3">
-                    <Mail className="h-6 w-6 text-orange-600" />
+                  <div className="bg-blue-100 rounded-lg p-3">
+                    <Mail className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Email</h3>
@@ -114,8 +114,8 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-orange-100 rounded-lg p-3">
-                    <Clock className="h-6 w-6 text-orange-600" />
+                  <div className="bg-blue-100 rounded-lg p-3">
+                    <Clock className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Office Hours</h3>
@@ -168,7 +168,7 @@ const Contact: React.FC = () => {
                     <input
                       {...register('name')}
                       type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       placeholder="Your full name"
                     />
                     {errors.name && (
@@ -183,7 +183,7 @@ const Contact: React.FC = () => {
                     <input
                       {...register('email')}
                       type="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       placeholder="your.email@example.com"
                     />
                     {errors.email && (
@@ -199,7 +199,7 @@ const Contact: React.FC = () => {
                   <input
                     {...register('phone')}
                     type="tel"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="+1 (555) 123-4567"
                   />
                   {errors.phone && (
@@ -214,7 +214,7 @@ const Contact: React.FC = () => {
                   <input
                     {...register('subject')}
                     type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="What can we help you with?"
                   />
                   {errors.subject && (
@@ -229,7 +229,7 @@ const Contact: React.FC = () => {
                   <textarea
                     {...register('message')}
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Tell us about your travel plans, questions, or how we can help..."
                   />
                   {errors.message && (
@@ -240,7 +240,7 @@ const Contact: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-orange-600 text-white py-3 px-6 rounded-md hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
                 >
                   <Send className="h-5 w-5" />
                   <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>

@@ -87,7 +87,7 @@ const TourManagement: React.FC = () => {
     switch (difficulty) {
       case 'easy': return 'bg-green-100 text-green-800';
       case 'moderate': return 'bg-yellow-100 text-yellow-800';
-      case 'challenging': return 'bg-orange-100 text-orange-800';
+      case 'challenging': return 'bg-blue-100 text-blue-800';
       case 'extreme': return 'bg-red-100 text-red-800';
       default: return 'bg-gray-100 text-gray-800';
     }
@@ -105,7 +105,7 @@ const TourManagement: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
       </div>
     );
   }
@@ -122,7 +122,7 @@ const TourManagement: React.FC = () => {
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
           <Link
             to="/admin/tours/new"
-            className="inline-flex items-center justify-center rounded-md border border-transparent bg-orange-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 sm:w-auto"
+            className="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto"
           >
             <Plus className="h-4 w-4 mr-2" />
             Add Tour Package
@@ -140,14 +140,14 @@ const TourManagement: React.FC = () => {
               placeholder="Search tours..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
 
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="all">All Categories</option>
             <option value="mountain-climbing">Mountain Climbing</option>
@@ -158,7 +158,7 @@ const TourManagement: React.FC = () => {
           <select
             value={selectedDifficulty}
             onChange={(e) => setSelectedDifficulty(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="all">All Difficulties</option>
             <option value="easy">Easy</option>
@@ -172,7 +172,7 @@ const TourManagement: React.FC = () => {
               type="checkbox"
               checked={showFeaturedOnly}
               onChange={(e) => setShowFeaturedOnly(e.target.checked)}
-              className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
             />
             <span className="text-sm text-gray-700">Featured Only</span>
           </label>
@@ -317,7 +317,7 @@ const TourManagement: React.FC = () => {
                           </Link>
                           <Link
                             to={`/admin/tours/edit/${tour.id}`}
-                            className="text-orange-600 hover:text-orange-900 p-1 rounded"
+                            className="text-blue-600 hover:text-blue-900 p-1 rounded"
                             title="Edit Tour"
                           >
                             <Edit className="h-4 w-4" />
@@ -348,7 +348,7 @@ const TourManagement: React.FC = () => {
           {tours.length === 0 && (
             <Link
               to="/admin/tours/new"
-              className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700"
+              className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
             >
               <Plus className="h-4 w-4 mr-2" />
               Create Your First Tour Package

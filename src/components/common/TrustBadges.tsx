@@ -37,7 +37,7 @@ const TrustBadges: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {badges.map((badge, index) => (
             <div key={index} className="flex flex-col items-center text-center">
-              <div className="text-orange-600 mb-3">
+              <div className="text-blue-600 mb-3">
                 {badge.icon}
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-1">

@@ -130,16 +130,16 @@ const Tours: React.FC = () => {
                 <div className="absolute right-0 top-1/2 h-0.5 w-6 bg-gradient-to-l from-indigo-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
               </div>
               <div className="absolute inset-2 animate-spin-fast">
-                <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-gradient-to-b from-orange-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
+                <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-gradient-to-b from-blue-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
                 <div className="absolute bottom-0 left-1/2 w-0.5 h-4 bg-gradient-to-t from-teal-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
                 <div className="absolute left-0 top-1/2 h-0.5 w-4 bg-gradient-to-r from-lime-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
                 <div className="absolute right-0 top-1/2 h-0.5 w-4 bg-gradient-to-l from-rose-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
               </div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-2 h-2 bg-orange-600 rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
               </div>
             </div>
-            <div className="text-orange-600 font-semibold text-lg">Loading tours...</div>
+            <div className="text-blue-600 font-semibold text-lg">Loading tours...</div>
           </div>
         </div>
       </div>
@@ -170,7 +170,7 @@ const Tours: React.FC = () => {
                 placeholder="Search tours..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -178,7 +178,7 @@ const Tours: React.FC = () => {
             <select
               value={selectedDifficulty}
               onChange={(e) => setSelectedDifficulty(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="">All Difficulties</option>
               <option value="easy">Easy</option>
@@ -191,7 +191,7 @@ const Tours: React.FC = () => {
             <select
               value={selectedDuration}
               onChange={(e) => setSelectedDuration(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="">All Durations</option>
               <option value="1-1">1 Day</option>
@@ -204,7 +204,7 @@ const Tours: React.FC = () => {
             <select
               value={priceRange}
               onChange={(e) => setPriceRange(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="">All Prices</option>
               <option value="0-500">Under $500</option>
@@ -216,7 +216,7 @@ const Tours: React.FC = () => {
             {/* Clear Filters */}
             <button
               onClick={clearFilters}
-              className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700 transition-colors"
+              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
             >
               Clear Filters
             </button>
@@ -228,7 +228,7 @@ const Tours: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Link
               to="/tours"
-              className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors"
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             >
               All Tours
             </Link>
@@ -272,7 +272,7 @@ const Tours: React.FC = () => {
             <div className="text-gray-500 text-lg">No tours found matching your criteria.</div>
             <button
               onClick={clearFilters}
-              className="mt-4 text-orange-600 hover:text-orange-700"
+              className="mt-4 text-blue-600 hover:text-blue-700"
             >
               Clear filters to see all tours
             </button>

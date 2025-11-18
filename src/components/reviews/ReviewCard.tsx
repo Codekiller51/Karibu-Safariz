@@ -157,7 +157,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, showTourInfo = false })
           {review.content.length > 200 && (
             <button
               onClick={() => setShowFullContent(!showFullContent)}
-              className="text-orange-600 hover:text-orange-700 text-sm font-medium mt-2"
+              className="text-blue-600 hover:text-blue-700 text-sm font-medium mt-2"
             >
               {showFullContent ? 'Show Less' : 'Read More'}
             </button>
@@ -204,8 +204,8 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review, showTourInfo = false })
             onClick={handleHelpful}
             className={`flex items-center space-x-2 text-sm transition-colors ${
               helpful
-                ? 'text-orange-600'
-                : 'text-gray-500 hover:text-orange-600'
+                ? 'text-blue-600'
+                : 'text-gray-500 hover:text-blue-600'
             }`}
           >
             <ThumbsUp className={`h-4 w-4 ${helpful ? 'fill-current' : ''}`} />

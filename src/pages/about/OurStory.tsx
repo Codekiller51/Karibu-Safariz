@@ -63,7 +63,7 @@ const OurStory: React.FC = () => {
         {/* Back Button */}
         <Link
           to="/about"
-          className="inline-flex items-center space-x-2 text-gray-600 hover:text-orange-600 mb-8"
+          className="inline-flex items-center space-x-2 text-gray-600 hover:text-blue-600 mb-8"
         >
           <ArrowLeft className="h-5 w-5" />
           <span>Back to About</span>
@@ -97,15 +97,15 @@ const OurStory: React.FC = () => {
               </p>
               <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
-                  <Mountain className="h-5 w-5 text-orange-600" />
+                  <Mountain className="h-5 w-5 text-blue-600" />
                   <span className="text-sm text-gray-600">Est. 2009</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Users className="h-5 w-5 text-orange-600" />
+                  <Users className="h-5 w-5 text-blue-600" />
                   <span className="text-sm text-gray-600">5000+ Travelers</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Award className="h-5 w-5 text-orange-600" />
+                  <Award className="h-5 w-5 text-blue-600" />
                   <span className="text-sm text-gray-600">Award Winning</span>
                 </div>
               </div>
@@ -133,7 +133,7 @@ const OurStory: React.FC = () => {
                   />
                   <div>
                     <h3 className="text-xl font-bold text-gray-900">{founder.name}</h3>
-                    <p className="text-orange-600 font-medium">{founder.role}</p>
+                    <p className="text-blue-600 font-medium">{founder.role}</p>
                   </div>
                 </div>
                 <p className="text-gray-600 leading-relaxed">{founder.story}</p>
@@ -153,21 +153,21 @@ const OurStory: React.FC = () => {
 
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-orange-200 h-full hidden md:block"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-blue-200 h-full hidden md:block"></div>
 
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
                 <div key={index} className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   <div className="flex-1 md:pr-8">
                     <div className={`bg-white rounded-lg shadow-lg p-6 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                      <div className="text-2xl font-bold text-orange-600 mb-2">{milestone.year}</div>
+                      <div className="text-2xl font-bold text-blue-600 mb-2">{milestone.year}</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-3">{milestone.title}</h3>
                       <p className="text-gray-600">{milestone.description}</p>
                     </div>
                   </div>
 
                   {/* Timeline dot */}
-                  <div className="hidden md:flex w-4 h-4 bg-orange-600 rounded-full border-4 border-white shadow-lg z-10"></div>
+                  <div className="hidden md:flex w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"></div>
 
                   <div className="flex-1 md:pl-8">
                     <img
@@ -183,7 +183,7 @@ const OurStory: React.FC = () => {
         </div>
 
         {/* Values Section */}
-        <div className="bg-orange-50 rounded-2xl p-8 md:p-12 mb-16">
+        <div className="bg-blue-50 rounded-2xl p-8 md:p-12 mb-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -193,7 +193,7 @@ const OurStory: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="bg-orange-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Heart className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Passion</h3>
@@ -201,7 +201,7 @@ const OurStory: React.FC = () => {
             </div>
 
             <div className="text-center">
-              <div className="bg-orange-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Community</h3>
@@ -209,7 +209,7 @@ const OurStory: React.FC = () => {
             </div>
 
             <div className="text-center">
-              <div className="bg-orange-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Mountain className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Adventure</h3>
@@ -217,7 +217,7 @@ const OurStory: React.FC = () => {
             </div>
 
             <div className="text-center">
-              <div className="bg-orange-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Excellence</h3>
@@ -237,13 +237,13 @@ const OurStory: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/tours"
-              className="bg-orange-600 text-white px-8 py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold"
+              className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
             >
               Start Your Adventure
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-orange-600 text-orange-600 px-8 py-3 rounded-lg hover:bg-orange-600 hover:text-white transition-colors font-semibold"
+              className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition-colors font-semibold"
             >
               Get in Touch
             </Link>

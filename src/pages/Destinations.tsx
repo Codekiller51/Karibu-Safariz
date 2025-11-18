@@ -59,7 +59,7 @@ const Destinations: React.FC = () => {
     switch (difficulty) {
       case 'easy': return 'bg-green-100 text-green-800';
       case 'moderate': return 'bg-yellow-100 text-yellow-800';
-      case 'challenging': return 'bg-orange-100 text-orange-800';
+      case 'challenging': return 'bg-blue-100 text-blue-800';
       case 'extreme': return 'bg-red-100 text-red-800';
       default: return 'bg-gray-100 text-gray-800';
     }
@@ -110,7 +110,7 @@ const Destinations: React.FC = () => {
                     />
                     <div className="absolute top-4 left-4">
                       <div className="bg-white bg-opacity-90 rounded-full p-2">
-                        <IconComponent className="h-5 w-5 text-orange-600" />
+                        <IconComponent className="h-5 w-5 text-blue-600" />
                       </div>
                     </div>
                     <div className="absolute top-4 right-4">
@@ -120,7 +120,7 @@ const Destinations: React.FC = () => {
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                       {destination.name}
                     </h3>
                     <p className="text-gray-600 text-sm mb-3 line-clamp-2">
@@ -154,7 +154,7 @@ const Destinations: React.FC = () => {
                 placeholder="Search destinations..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -162,7 +162,7 @@ const Destinations: React.FC = () => {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             >
               {categories.map((category) => (
                 <option key={category.id} value={category.id}>
@@ -175,7 +175,7 @@ const Destinations: React.FC = () => {
             <select
               value={selectedDifficulty}
               onChange={(e) => setSelectedDifficulty(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             >
               <option value="">All Difficulties</option>
               <option value="easy">Easy</option>
@@ -191,7 +191,7 @@ const Destinations: React.FC = () => {
                 setSelectedCategory('all');
                 setSelectedDifficulty('');
               }}
-              className="bg-orange-600 text-white px-4 py-2 rounded-md hover:bg-orange-700 transition-colors"
+              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors"
             >
               Clear Filters
             </button>
@@ -208,8 +208,8 @@ const Destinations: React.FC = () => {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`flex items-center space-x-2 px-6 py-3 rounded-lg transition-colors ${
                   selectedCategory === category.id
-                    ? 'bg-orange-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-orange-50 border border-gray-300'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white text-gray-700 hover:bg-blue-50 border border-gray-300'
                 }`}
               >
                 <IconComponent className="h-5 w-5" />
@@ -248,7 +248,7 @@ const Destinations: React.FC = () => {
                     />
                     <div className="absolute top-4 left-4">
                       <div className="bg-white bg-opacity-90 rounded-full p-2">
-                        <IconComponent className="h-5 w-5 text-orange-600" />
+                        <IconComponent className="h-5 w-5 text-blue-600" />
                       </div>
                     </div>
                     <div className="absolute top-4 right-4">
@@ -259,7 +259,7 @@ const Destinations: React.FC = () => {
                   </div>
                   
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                       {destination.name}
                     </h3>
                     <p className="text-gray-600 mb-4 line-clamp-3">
@@ -283,7 +283,7 @@ const Destinations: React.FC = () => {
                         {destination.highlights.slice(0, 3).map((highlight, index) => (
                           <span
                             key={index}
-                            className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs"
+                            className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs"
                           >
                             {highlight}
                           </span>
@@ -297,10 +297,10 @@ const Destinations: React.FC = () => {
                     </div>
 
                     <div className="flex items-center justify-between">
-                      <div className="text-orange-600 font-semibold group-hover:text-orange-700">
+                      <div className="text-blue-600 font-semibold group-hover:text-blue-700">
                         Explore Destination
                       </div>
-                      <div className="text-orange-600 group-hover:translate-x-1 transition-transform">
+                      <div className="text-blue-600 group-hover:translate-x-1 transition-transform">
                         →
                       </div>
                     </div>
@@ -318,7 +318,7 @@ const Destinations: React.FC = () => {
                 setSelectedCategory('all');
                 setSelectedDifficulty('');
               }}
-              className="mt-4 text-orange-600 hover:text-orange-700"
+              className="mt-4 text-blue-600 hover:text-blue-700"
             >
               Clear filters to see all destinations
             </button>
@@ -326,7 +326,7 @@ const Destinations: React.FC = () => {
         )}
 
         {/* Call to Action */}
-        <div className="mt-16 bg-gradient-to-r from-orange-600 to-orange-800 rounded-2xl text-white p-8 md:p-12 text-center">
+        <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl text-white p-8 md:p-12 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Explore Tanzania?
           </h2>
@@ -336,13 +336,13 @@ const Destinations: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/tours"
-              className="bg-white text-orange-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
             >
               Browse Tours
             </Link>
             <Link
               to="/contact"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-orange-600 transition-colors font-semibold"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold"
             >
               Plan Custom Trip
             </Link>

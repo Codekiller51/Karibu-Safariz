@@ -40,7 +40,7 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children, isLoading }) 
                 
                 {/* Inner spinning lines - fast rotation */}
                 <div className="absolute inset-2 animate-spin-fast">
-                  <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-gradient-to-b from-orange-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
+                  <div className="absolute top-0 left-1/2 w-0.5 h-4 bg-gradient-to-b from-blue-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
                   <div className="absolute bottom-0 left-1/2 w-0.5 h-4 bg-gradient-to-t from-teal-500 to-transparent transform -translate-x-1/2 rounded-full"></div>
                   <div className="absolute left-0 top-1/2 h-0.5 w-4 bg-gradient-to-r from-lime-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
                   <div className="absolute right-0 top-1/2 h-0.5 w-4 bg-gradient-to-l from-rose-500 to-transparent transform -translate-y-1/2 rounded-full"></div>
@@ -48,19 +48,19 @@ const PageTransition: React.FC<PageTransitionProps> = ({ children, isLoading }) 
 
                 {/* Center dot */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-2 h-2 bg-orange-600 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></div>
                 </div>
               </div>
             </div>
 
             {/* Loading Text */}
-            <div className="text-orange-600 font-semibold text-lg mb-4">Loading...</div>
+            <div className="text-blue-600 font-semibold text-lg mb-4">Loading...</div>
             
             {/* Loading Dots */}
             <div className="flex justify-center space-x-1">
-              <div className="w-2 h-2 bg-orange-600 rounded-full animate-bounce"></div>
-              <div className="w-2 h-2 bg-orange-600 rounded-full animate-bounce delay-150"></div>
-              <div className="w-2 h-2 bg-orange-600 rounded-full animate-bounce delay-300"></div>
+              <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce"></div>
+              <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce delay-150"></div>
+              <div className="w-2 h-2 bg-blue-600 rounded-full animate-bounce delay-300"></div>
             </div>
           </div>
         </motion.div>

@@ -201,7 +201,7 @@ Understanding and respecting local customs will enhance your experience and help
         {/* Back Button */}
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center space-x-2 text-gray-600 hover:text-orange-600 mb-6"
+          className="flex items-center space-x-2 text-gray-600 hover:text-blue-600 mb-6"
         >
           <ArrowLeft className="h-5 w-5" />
           <span>Back to Travel Info</span>
@@ -223,14 +223,14 @@ Understanding and respecting local customs will enhance your experience and help
               <div className="flex space-x-2">
                 <button
                   onClick={handleShare}
-                  className="flex items-center space-x-1 text-gray-500 hover:text-orange-600 text-sm"
+                  className="flex items-center space-x-1 text-gray-500 hover:text-blue-600 text-sm"
                 >
                   <Share2 className="h-4 w-4" />
                   <span>Share</span>
                 </button>
                 <button
                   onClick={handlePrint}
-                  className="flex items-center space-x-1 text-gray-500 hover:text-orange-600 text-sm"
+                  className="flex items-center space-x-1 text-gray-500 hover:text-blue-600 text-sm"
                 >
                   <Print className="h-4 w-4" />
                   <span>Print</span>
@@ -251,7 +251,7 @@ Understanding and respecting local customs will enhance your experience and help
               {(info.tags || []).map((tag: string, index: number) => (
                 <span
                   key={index}
-                  className="inline-flex items-center space-x-1 bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm"
+                  className="inline-flex items-center space-x-1 bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
                 >
                   <Tag className="h-3 w-3" />
                   <span>{tag}</span>
@@ -269,7 +269,7 @@ Understanding and respecting local customs will enhance your experience and help
                 {(info.content || '').split('\n\n').map((section: string, index: number) => {
                   if (section.startsWith('## ')) {
                     return (
-                      <h2 key={index} className="text-2xl font-bold text-gray-900 mt-8 mb-4 border-b-2 border-orange-200 pb-2">
+                      <h2 key={index} className="text-2xl font-bold text-gray-900 mt-8 mb-4 border-b-2 border-blue-200 pb-2">
                         {section.replace('## ', '')}
                       </h2>
                     );
@@ -364,21 +364,21 @@ Understanding and respecting local customs will enhance your experience and help
               <div className="space-y-3">
                 <Link
                   to="/travel-info/packing-guide-tanzania"
-                  className="block p-3 border border-gray-200 rounded-lg hover:border-orange-300 hover:bg-orange-50 transition-colors"
+                  className="block p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
                 >
                   <div className="font-medium text-gray-900 text-sm">Packing Guide</div>
                   <div className="text-gray-600 text-xs">What to bring for your Tanzania trip</div>
                 </Link>
                 <Link
                   to="/travel-info/health-safety-tanzania"
-                  className="block p-3 border border-gray-200 rounded-lg hover:border-orange-300 hover:bg-orange-50 transition-colors"
+                  className="block p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
                 >
                   <div className="font-medium text-gray-900 text-sm">Health & Safety</div>
                   <div className="text-gray-600 text-xs">Stay healthy and safe during your visit</div>
                 </Link>
                 <Link
                   to="/travel-info/currency-payments-tanzania"
-                  className="block p-3 border border-gray-200 rounded-lg hover:border-orange-300 hover:bg-orange-50 transition-colors"
+                  className="block p-3 border border-gray-200 rounded-lg hover:border-blue-300 hover:bg-blue-50 transition-colors"
                 >
                   <div className="font-medium text-gray-900 text-sm">Currency Guide</div>
                   <div className="text-gray-600 text-xs">Money matters and payment methods</div>
@@ -388,7 +388,7 @@ Understanding and respecting local customs will enhance your experience and help
               <div className="mt-6 pt-6 border-t border-gray-200">
                 <Link
                   to="/contact"
-                  className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold text-center block"
+                  className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-center block"
                 >
                   Need More Help?
                 </Link>

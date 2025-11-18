@@ -146,8 +146,8 @@ const Gallery: React.FC = () => {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`flex items-center space-x-2 px-6 py-3 rounded-lg transition-colors ${
                   selectedCategory === category.id
-                    ? 'bg-orange-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-orange-50 border border-gray-300'
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-white text-gray-700 hover:bg-blue-50 border border-gray-300'
                 }`}
               >
                 <Icon className="h-5 w-5" />
@@ -230,7 +230,7 @@ const Gallery: React.FC = () => {
         )}
 
         {/* Call to Action */}
-        <div className="mt-16 bg-orange-50 rounded-2xl p-8 md:p-12 text-center">
+        <div className="mt-16 bg-blue-50 rounded-2xl p-8 md:p-12 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Ready to Create Your Own Memories?
           </h2>
@@ -238,10 +238,10 @@ const Gallery: React.FC = () => {
             Join us on an unforgettable adventure and capture your own stunning moments in Tanzania's most beautiful locations.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-orange-600 text-white px-8 py-3 rounded-lg hover:bg-orange-700 transition-colors text-lg font-semibold">
+            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold">
               Book Your Adventure
             </button>
-            <button className="border-2 border-orange-600 text-orange-600 px-8 py-3 rounded-lg hover:bg-orange-600 hover:text-white transition-colors text-lg font-semibold">
+            <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition-colors text-lg font-semibold">
               Contact Us
             </button>
           </div>

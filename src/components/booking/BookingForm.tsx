@@ -169,11 +169,11 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
               {[1, 2, 3].map((step) => (
                 <div key={step} className="flex items-center">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                    currentStep >= step ? 'bg-orange-600 text-white' : 'bg-gray-300 text-gray-600'
+                    currentStep >= step ? 'bg-blue-600 text-white' : 'bg-gray-300 text-gray-600'
                   }`}>
                     {step}
                   </div>
-                  <span className={`ml-2 ${currentStep >= step ? 'text-orange-600' : 'text-gray-500'}`}>
+                  <span className={`ml-2 ${currentStep >= step ? 'text-blue-600' : 'text-gray-500'}`}>
                     {step === 1 ? 'Personal Info' : step === 2 ? 'Participants' : 'Review & Pay'}
                   </span>
                   {step < 3 && <div className="w-16 h-0.5 bg-gray-300 mx-4"></div>}
@@ -198,7 +198,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                       <input
                         {...register('customer_name')}
                         type="text"
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Enter your full name"
                       />
                     </div>
@@ -216,7 +216,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                       <input
                         {...register('customer_email')}
                         type="email"
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Enter your email"
                       />
                     </div>
@@ -234,7 +234,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                       <input
                         {...register('customer_phone')}
                         type="tel"
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                         placeholder="Enter your phone number"
                       />
                     </div>
@@ -250,7 +250,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                     <input
                       {...register('nationality')}
                       type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       placeholder="Enter your nationality"
                     />
                     {errors.nationality && (
@@ -300,7 +300,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                         {...register('start_date')}
                         type="date"
                         min={new Date().toISOString().split('T')[0]}
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       />
                     </div>
                     {errors.start_date && (
@@ -316,7 +316,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                       <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                       <select
                         {...register('participants', { valueAsNumber: true })}
-                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       >
                         {Array.from({ length: tour.max_participants }, (_, i) => i + 1).map(num => (
                           <option key={num} value={num}>{num} participant{num > 1 ? 's' : ''}</option>
@@ -332,7 +332,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                 <button
                   type="button"
                   onClick={() => setCurrentStep(2)}
-                  className="w-full bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold"
+                  className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
                 >
                   Continue to Participant Details
                 </button>
@@ -359,7 +359,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                           type="text"
                           value={participant.name}
                           onChange={(e) => updateParticipantDetail(index, 'name', e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                           placeholder="Full name"
                           required
                         />
@@ -373,7 +373,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                           type="number"
                           value={participant.age}
                           onChange={(e) => updateParticipantDetail(index, 'age', e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                           placeholder="Age"
                           min="1"
                           max="100"
@@ -389,7 +389,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                           type="text"
                           value={participant.nationality}
                           onChange={(e) => updateParticipantDetail(index, 'nationality', e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                           placeholder="Nationality"
                           required
                         />
@@ -405,7 +405,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                           type="text"
                           value={participant.dietary_requirements}
                           onChange={(e) => updateParticipantDetail(index, 'dietary_requirements', e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                           placeholder="Any dietary restrictions"
                         />
                       </div>
@@ -418,7 +418,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                           type="text"
                           value={participant.medical_conditions}
                           onChange={(e) => updateParticipantDetail(index, 'medical_conditions', e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                           placeholder="Any medical conditions"
                         />
                       </div>
@@ -437,7 +437,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                     <textarea
                       {...register('accessibility_needs')}
                       rows={3}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       placeholder="Any accessibility requirements or mobility assistance needed"
                     />
                   </div>
@@ -449,7 +449,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                     <textarea
                       {...register('special_requests')}
                       rows={3}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                       placeholder="Any special requests or preferences for your tour"
                     />
                   </div>
@@ -466,7 +466,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                   <button
                     type="button"
                     onClick={() => setCurrentStep(3)}
-                    className="flex-1 bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold"
+                    className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
                   >
                     Review & Continue
                   </button>
@@ -521,10 +521,10 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                     <input
                       {...register('terms_accepted')}
                       type="checkbox"
-                      className="mt-1 h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                      className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                     />
                     <label className="text-sm text-gray-700">
-                      I accept the <a href="/terms" target="_blank" className="text-orange-600 hover:underline">Terms and Conditions</a> *
+                      I accept the <a href="/terms" target="_blank" className="text-blue-600 hover:underline">Terms and Conditions</a> *
                     </label>
                   </div>
                   {errors.terms_accepted && (
@@ -535,7 +535,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                     <input
                       {...register('cancellation_policy_accepted')}
                       type="checkbox"
-                      className="mt-1 h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                      className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                     />
                     <label className="text-sm text-gray-700">
                       I understand and accept the cancellation policy outlined above *
@@ -549,10 +549,10 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                     <input
                       {...register('privacy_policy_accepted')}
                       type="checkbox"
-                      className="mt-1 h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                      className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                     />
                     <label className="text-sm text-gray-700">
-                      I accept the <a href="/privacy" target="_blank" className="text-orange-600 hover:underline">Privacy Policy</a> and consent to data processing *
+                      I accept the <a href="/privacy" target="_blank" className="text-blue-600 hover:underline">Privacy Policy</a> and consent to data processing *
                     </label>
                   </div>
                   {errors.privacy_policy_accepted && (
@@ -571,7 +571,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tour, onClose, onSuccess }) =
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="flex-1 bg-orange-600 text-white py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold flex items-center justify-center space-x-2 disabled:bg-orange-400 disabled:cursor-not-allowed"
+                    className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold flex items-center justify-center space-x-2 disabled:bg-blue-400 disabled:cursor-not-allowed"
                   >
                     <Shield className="h-5 w-5" />
                     <span>{isSubmitting ? 'Submitting...' : 'Submit Booking Request'}</span>

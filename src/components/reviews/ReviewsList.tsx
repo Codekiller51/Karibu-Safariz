@@ -175,7 +175,7 @@ const ReviewsList: React.FC<ReviewsListProps> = ({
               placeholder="Search reviews..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
 
@@ -201,7 +201,7 @@ const ReviewsList: React.FC<ReviewsListProps> = ({
               <select
                 value={filterRating || ''}
                 onChange={(e) => setFilterRating(e.target.value ? parseInt(e.target.value) : null)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="">All Ratings</option>
                 <option value="5">5 Stars</option>
@@ -220,7 +220,7 @@ const ReviewsList: React.FC<ReviewsListProps> = ({
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as any)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               >
                 <option value="newest">Newest First</option>
                 <option value="oldest">Oldest First</option>
@@ -258,7 +258,7 @@ const ReviewsList: React.FC<ReviewsListProps> = ({
                 setFilterRating(null);
                 setSortBy('newest');
               }}
-              className="mt-4 text-orange-600 hover:text-orange-700"
+              className="mt-4 text-blue-600 hover:text-blue-700"
             >
               Clear filters to see all reviews
             </button>

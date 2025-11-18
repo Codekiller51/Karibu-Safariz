@@ -94,7 +94,7 @@ const BlogManagement: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
       </div>
     );
   }
@@ -111,7 +111,7 @@ const BlogManagement: React.FC = () => {
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
           <Link
             to="/admin/blog/new"
-            className="inline-flex items-center justify-center rounded-md border border-transparent bg-orange-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 sm:w-auto"
+            className="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 sm:w-auto"
           >
             <Plus className="h-4 w-4 mr-2" />
             Create Blog Post
@@ -129,14 +129,14 @@ const BlogManagement: React.FC = () => {
               placeholder="Search posts..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
 
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="all">All Categories</option>
             {categories.map(category => (
@@ -149,7 +149,7 @@ const BlogManagement: React.FC = () => {
               type="checkbox"
               checked={showPublishedOnly}
               onChange={(e) => setShowPublishedOnly(e.target.checked)}
-              className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
             />
             <span className="text-sm text-gray-700">Published Only</span>
           </label>
@@ -273,7 +273,7 @@ const BlogManagement: React.FC = () => {
                           </Link>
                           <Link
                             to={`/admin/blog/edit/${post.id}`}
-                            className="text-orange-600 hover:text-orange-900 p-1 rounded"
+                            className="text-blue-600 hover:text-blue-900 p-1 rounded"
                             title="Edit Post"
                           >
                             <Edit className="h-4 w-4" />
@@ -304,7 +304,7 @@ const BlogManagement: React.FC = () => {
           {posts.length === 0 && (
             <Link
               to="/admin/blog/new"
-              className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700"
+              className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
             >
               <Plus className="h-4 w-4 mr-2" />
               Create Your First Blog Post

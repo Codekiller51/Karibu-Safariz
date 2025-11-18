@@ -194,7 +194,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({
                 {...register('title')}
                 type="text"
                 placeholder="Summarize your experience in a few words"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
               {errors.title && (
                 <p className="mt-1 text-sm text-red-600">{errors.title.message}</p>
@@ -210,7 +210,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({
                 {...register('content')}
                 rows={6}
                 placeholder="Tell us about your experience. What did you enjoy most? What could be improved? Your detailed feedback helps other travelers and helps us improve our services."
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-orange-500 focus:border-orange-500"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
               {errors.content && (
                 <p className="mt-1 text-sm text-red-600">{errors.content.message}</p>
@@ -285,7 +285,7 @@ const ReviewForm: React.FC<ReviewFormProps> = ({
               <button
                 type="submit"
                 disabled={isSubmitting || selectedRating === 0}
-                className="flex-1 bg-orange-600 text-white py-3 px-6 rounded-lg hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
               >
                 {isSubmitting ? (
                   <>
