@@ -30,7 +30,7 @@ const DealCard: React.FC<DealCardProps> = ({
   return (
     <Link
       to={`/tours/${id}`}
-      className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group"
+      className="card-base card-hover group"
     >
       <div className="relative h-48 overflow-hidden">
         <img

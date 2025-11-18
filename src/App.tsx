@@ -6,6 +6,7 @@ import LoadingScreen from './components/common/LoadingScreen';
 import PageTransition from './components/common/PageTransition';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
+import Breadcrumbs from './components/common/Breadcrumbs';
 import Home from './pages/Home';
 import Tours from './pages/Tours';
 import TourDetail from './pages/TourDetail';
@@ -38,6 +39,7 @@ function AppContent() {
     <PageTransition isLoading={isLoading}>
       <div className="min-h-screen bg-gray-100">
         {!isAdminRoute && <Header />}
+        {!isAdminRoute && <Breadcrumbs />}
         <main>
           <Routes>
             <Route path="/" element={<Home />} />

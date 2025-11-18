@@ -43,7 +43,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, featured = false }) => {
   };
 
   return (
-    <div className={`bg-white rounded-lg shadow-lg overflow-hidden card-3d gpu-accelerated h-full flex flex-col ${
+    <div className={`card-base card-hover h-full flex flex-col ${
       featured ? 'md:col-span-2' : ''
     }`}>
       <div className="relative overflow-hidden">
@@ -93,7 +93,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour, featured = false }) => {
           </div>
           <Link
             to={`/tours/${tour.category}/${tour.id}`}
-            className="bg-orange-600 text-white px-6 py-2 rounded-md hover:bg-orange-700 transition-all duration-300 hover:shadow-lg hover:scale-105"
+            className="btn-base btn-primary px-6 py-2"
           >
             View Details
           </Link>

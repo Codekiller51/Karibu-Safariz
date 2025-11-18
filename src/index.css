@@ -99,6 +99,54 @@
     text-wrap: balance;
   }
 
+  .card-shadow {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .card-shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .card-shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .card-base {
+    @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 ease-out;
+  }
+
+  .card-hover {
+    @apply hover:shadow-xl hover:scale-105 active:scale-95;
+  }
+
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 font-medium rounded-lg transition-all duration-300 ease-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-600 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-orange-600 text-white hover:bg-orange-700 active:bg-orange-800 shadow-md hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-900 hover:bg-gray-300 active:bg-gray-400;
+  }
+
+  .btn-outline {
+    @apply border-2 border-orange-600 text-orange-600 hover:bg-orange-50 active:bg-orange-100;
+  }
+
+  .btn-ghost {
+    @apply text-orange-600 hover:bg-orange-50 active:bg-orange-100;
+  }
+
+  .input-base {
+    @apply px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all duration-300;
+  }
+
+  .input-error {
+    @apply border-red-500 focus:ring-red-500 focus:border-red-500;
+  }
+
   .parallax-layer {
     transform-style: preserve-3d;
     will-change: transform;

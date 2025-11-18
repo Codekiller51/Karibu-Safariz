@@ -273,13 +273,13 @@ const Hero: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to={currentSlideData.cta.primary.link}
-                  className="bg-orange-600 text-white px-8 py-4 rounded-lg hover:bg-orange-700 transition-colors flex items-center justify-center space-x-2 text-lg font-semibold"
+                  className="btn-base btn-primary px-8 py-4 text-lg"
                 >
                   <span>{currentSlideData.cta.primary.text}</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
-                
-                <button className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-gray-900 transition-colors flex items-center justify-center space-x-2 text-lg font-semibold">
+
+                <button className="btn-base border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg">
                   <span>{currentSlideData.cta.secondary.text}</span>
                 </button>
               </div>
@@ -288,7 +288,7 @@ const Hero: React.FC = () => {
 
             {/* Right Content - Tour Card */}
             <div className="flex justify-center lg:justify-end">
-              <div className="bg-white rounded-2xl shadow-2xl overflow-hidden max-w-sm w-full transform hover:scale-105 transition-transform duration-300">
+              <div className="card-base card-hover max-w-sm w-full">
                 <div className="relative">
                   <img 
                     src={currentSlideData.image}
@@ -323,14 +323,14 @@ const Hero: React.FC = () => {
       {/* Search Form */}
       <div className="relative z-10 pb-8 mt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 mt-8">
+          <div className="card-base card-shadow-xl p-6 md:p-8 mt-8">
             <div className="flex items-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold text-orange-600 mr-4">Find Your Tour</h2>
               <div className="text-sm text-gray-500">
                 Search from {destinations.length} destinations
               </div>
             </div>
-            
+
             <form onSubmit={handleSearchSubmit} className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {/* Keyword Search */}
               <div className="relative">
@@ -339,17 +339,17 @@ const Hero: React.FC = () => {
                   placeholder="Keyword"
                   value={searchForm.keyword}
                   onChange={(e) => handleInputChange('keyword', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none"
+                  className="input-base w-full"
                 />
                 <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
               </div>
 
               {/* Destination Select */}
               <div className="relative">
-                <select 
+                <select
                   value={searchForm.destination}
                   onChange={(e) => handleInputChange('destination', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none appearance-none bg-white"
+                  className="input-base w-full appearance-none bg-white"
                 >
                   <option value="">Select your Destination</option>
                   {destinations.map((dest) => (
@@ -368,16 +368,16 @@ const Hero: React.FC = () => {
                   value={searchForm.departureDate}
                   onChange={(e) => handleInputChange('departureDate', e.target.value)}
                   min={new Date().toISOString().split('T')[0]}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none"
+                  className="input-base w-full"
                 />
                 <Calendar className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 pointer-events-none" />
               </div>
 
               {/* Search Button */}
-              <button 
+              <button
                 type="submit"
                 disabled={isSearching}
-                className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors flex items-center justify-center space-x-2 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+                className="btn-base btn-primary"
               >
                 <Search className="h-5 w-5" />
                 <span>{isSearching ? 'Searching...' : 'Search Tours'}</span>

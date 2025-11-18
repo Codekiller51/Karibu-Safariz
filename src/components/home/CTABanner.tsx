@@ -35,7 +35,7 @@ const CTABanner: React.FC<CTABannerProps> = ({
         )}
         <Link
           to={ctaLink}
-          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg font-semibold transition-colors duration-300"
+          className="btn-base btn-primary px-6 md:px-8 py-2 md:py-3"
         >
           {ctaText}
           <ArrowRight className="h-4 w-4" />
