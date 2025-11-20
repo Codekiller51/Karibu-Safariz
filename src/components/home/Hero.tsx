@@ -213,15 +213,13 @@ const Hero: React.FC = () => {
           {slides.map((slide, index) => (
             <div
               key={slide.id}
-              className={`absolute inset-0 w-full h-full transition-transform duration-700 ease-in-out ${
-                index === currentSlide 
-                  ? 'transform translate-x-0' 
-                  : index < currentSlide 
-                    ? 'transform -translate-x-full' 
-                    : 'transform translate-x-full'
+              className={`absolute inset-0 w-full h-full transition-all duration-700 ease-out ${
+                index === currentSlide
+                  ? 'opacity-100 scale-105'
+                  : 'opacity-0 scale-100'
               }`}
             >
-              <img 
+              <img
                 src={slide.image}
                 alt={slide.title}
                 className="w-full h-full object-cover"
@@ -229,7 +227,7 @@ const Hero: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
       </div>
 
       {/* Navigation Arrows */}
@@ -251,18 +249,18 @@ const Hero: React.FC = () => {
 
       {/* Main Content */}
       <div className="relative z-10 flex-1 flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="text-white">
-            <div className="mt-8 md:mt-12">
+            <div className="mt-8 md:mt-12 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-6 md:p-8">
               <div className="mb-4">
-                <span className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wide">
+                <span className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium uppercase tracking-wide shadow-lg shadow-blue-600/30">
                   {currentSlideData.category}
                 </span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-white text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-xl">
                 {currentSlideData.title}
               </h1>
               
@@ -273,13 +271,13 @@ const Hero: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to={currentSlideData.cta.primary.link}
-                  className="btn-base btn-primary px-8 py-4 text-lg"
+                  className="btn-base btn-primary px-8 py-4 text-lg shadow-lg hover:shadow-xl"
                 >
                   <span>{currentSlideData.cta.primary.text}</span>
                   <ArrowRight className="h-5 w-5" />
                 </Link>
 
-                <button className="btn-base border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg">
+                <button className="btn-base border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg backdrop-blur-sm">
                   <span>{currentSlideData.cta.secondary.text}</span>
                 </button>
               </div>
@@ -288,15 +286,15 @@ const Hero: React.FC = () => {
 
             {/* Right Content - Tour Card */}
             <div className="flex justify-center lg:justify-end">
-              <div className="card-base card-hover max-w-sm w-full">
+              <div className="card-base card-hover max-w-sm w-full rounded-2xl overflow-hidden">
                 <div className="relative">
                   <img 
                     src={currentSlideData.image}
                     alt={currentSlideData.tourTitle}
-                    className="w-full h-48 object-cover"
+                    className="w-full h-56 object-cover"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">
+                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-md">
                       {currentSlideData.price}
                     </span>
                   </div>
@@ -322,8 +320,8 @@ const Hero: React.FC = () => {
 
       {/* Search Form */}
       <div className="relative z-10 pb-8 mt-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="card-base card-shadow-xl p-6 md:p-8 mt-8">
+        <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16">
+          <div className="bg-white/90 backdrop-blur-lg rounded-2xl border border-gray-200 p-6 md:p-8 mt-8 shadow-xl">
             <div className="flex items-center mb-8">
               <h2 className="text-2xl md:text-3xl font-bold text-blue-600 mr-4">Find Your Tour</h2>
               <div className="text-sm text-gray-500">
@@ -438,10 +436,10 @@ const Hero: React.FC = () => {
                 setTimeout(() => setIsTransitioning(false), 500);
               }
             }}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`h-2 rounded-full transition-all duration-300 ${
               index === currentSlide
-                ? 'bg-blue-600 scale-125'
-                : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+                ? 'w-8 bg-blue-600'
+                : 'w-3 bg-white/60 hover:bg-white'
             }`}
           />
         ))}

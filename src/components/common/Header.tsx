@@ -162,11 +162,11 @@ const Header: React.FC = () => {
 
   return (
     <>
-      {/* Top Contact Bar - Hidden when scrolled */}
-      <div className={`bg-gray-900 text-white py-2 text-sm transition-all duration-300 ${
-        isScrolled ? 'h-0 overflow-hidden opacity-0' : 'h-auto opacity-100'
+      {/* Top Contact Bar - Fixed, collapses on scroll */}
+      <div className={`fixed top-0 left-0 w-full z-50 bg-gray-900 text-white text-sm transition-all duration-300 ${
+        isScrolled ? 'h-0 overflow-hidden opacity-0 pointer-events-none' : 'h-10 opacity-100'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
@@ -205,7 +205,7 @@ const Header: React.FC = () => {
       <header className={`fixed w-full z-40 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white shadow-lg top-0' 
-          : 'bg-white/95 backdrop-blur-sm top-50'
+          : 'bg-white/95 backdrop-blur-sm top-10'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">

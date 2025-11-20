@@ -15,11 +15,6 @@ const TrustBadges: React.FC = () => {
       description: 'All tours are verified and tested'
     },
     {
-      icon: <Award className="h-8 w-8" />,
-      title: 'Award Winning',
-      description: 'Recognized for excellence in service'
-    },
-    {
       icon: <Shield className="h-8 w-8" />,
       title: 'Secure Booking',
       description: 'Encrypted and protected transactions'

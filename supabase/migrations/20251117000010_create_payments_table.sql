@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS payments (
   created_at timestamptz DEFAULT now(),
   updated_at timestamptz DEFAULT now(),
   booking_id uuid NOT NULL REFERENCES bookings(id) ON DELETE CASCADE,
-  amount numeric(12,2) NOT NULL CHECK (amount > 0),
+  amount numeric(12,2) NOT NULL CHECK (amount \u003e 0),
   currency currency_type NOT NULL DEFAULT 'USD',
   status payment_status NOT NULL DEFAULT 'pending',
   payment_method text,

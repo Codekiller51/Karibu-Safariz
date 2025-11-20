@@ -146,7 +146,7 @@ const FeaturedTripsSlider: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10 h-screen flex items-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-16 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
             <div className="text-white">
@@ -156,7 +156,7 @@ const FeaturedTripsSlider: React.FC = () => {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 {currentSlideData.title}
               </h1>
 
